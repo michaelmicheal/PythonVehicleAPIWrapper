@@ -1,17 +1,18 @@
 from . import session
 from typing import Union, List, Tuple
 from pvaw.vehicle import Vehicle
+from pvaw.vehicle_list import VehicleList
 from pvaw.vin import Vin
-from pvaw.constants import VEHICLE_API
+from pvaw.utils import post_path, post_fields
+
 
 class BatchVinDecodeError(Exception):
     pass
 
 
 class VinList(Vin):
-
     def __init__(self, vins: Union[Tuple[Tuple[str, Union[str, int]]]]) -> None:
-        vin_list = []
+        self.vin_list = []
         for el in vins:
             if isinstance(el, tuple):
                 if len(el) == 1:
@@ -24,29 +25,31 @@ class VinList(Vin):
                 vin = Vin(el)
             else:
                 continue
-            vin_list.append(vin)
-        self.vin_list = vin_list
-        
-    
+        self.vin_list.append(vin)
 
     def decode(self) -> List[Vehicle]:
-        vin_batch = ''
-        for vin in self.vin_list:
-            if len(vin_batch) > 0:
-                vin_batch += ';'
-            vin_batch += vin.full_or_partial_vin
-            if vin.year is not None:
-                vin_batch += f', {vin.year}'
-        path = f'{VEHICLE_API}DecodeVINValuesBatch/'
-        post_fields = {'format': 'json', 'data': vin_batch}
+        vin_batch_str = ";".join(
+            vin.full_or_partial_vin
+            if vin.year is None
+            else f"{vin.full_or_partial_vin},{vin.year}"
+            for vin in self.vin_list
+        )
+        path = post_path("DecodeVINValuesBatch")
 
         try:
-            response = session.post(path, post_fields)
-            results_list = response.json()['Results']
+            response = session.post(path, post_fields(vin_batch_str))
+            results_list = response.json()["Results"]
         except ...:
-            raise BatchVinDecodeError
-        
-        vehiclelist = [Vehicle(results_dict) for results_dict in results_list]
-        return vehiclelist
+            raise BatchVinDecodeError("Error in API request")
 
+        if len(results_list) != len(self.vin_list):
+            raise BatchVinDecodeError("Incorrect number of results returned from API")
 
+        return VehicleList(
+            [
+                Vehicle(
+                    self.vin_list[i].full_or_partial_vin, self.year, results_list[i]
+                )
+                for i in range(len(results_list))
+            ]
+        )

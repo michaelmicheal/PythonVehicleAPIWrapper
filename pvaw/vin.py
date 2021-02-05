@@ -1,38 +1,33 @@
 from . import session
 from typing import Union, List, Tuple
 from pvaw.vehicle import Vehicle
-from pvaw.constants import VEHICLE_API
-class Vin:
+from pvaw.utils import get_path
 
-    def __init__(self, full_or_partial_vin: str, year: Union[str, int]= None) -> None:
+
+class Vin:
+    def __init__(self, full_or_partial_vin: str, year: Union[str, int] = None) -> None:
+        if not isinstance(full_or_partial_vin, str):
+            raise TypeError('"full_or_partial_vin" must be a str')
+
+        if len(full_or_partial_vin) > 17:
+            raise ValueError('"full_or_partial_vin" must be at most 17 characters')
+
+        if year is not None:
+            print(year)
+            if not isinstance(year, (int, str)):
+                raise TypeError('"year" must be a str or int')
+
+            if int(year) < 1953:
+                raise ValueError('"year" must be greater than 1953')
+
         self.full_or_partial_vin = full_or_partial_vin
         self.year = year
-    
 
     def decode(self) -> Vehicle:
-        path = f'{VEHICLE_API}DecodeVinValues/{self.full_or_partial_vin}?format=json'
         if self.year is not None:
-            path += '&modelyear={year}'
+            after_format = f"&modelyear={self.year}"
+        path = get_path("DecodeVinValues", self.full_or_partial_vin, after_format)
         response = session.get(path)
-        vehicle_dict = response.json()['Results'][0]
-        return Vehicle(vehicle_dict)
+        results_dict = response.json()["Results"][0]
 
-    @classmethod
-    def decode_vin_list(cls, vins: Union[Tuple[Tuple[str, Union[str, int]]]]) -> Tuple[Vehicle]:
-        vehicle_list = []
-        for el in vins:
-            if isinstance(el, tuple):
-                if len(el) == 1:
-                    vin = Vin(el[0])
-                elif len(el) == 2:
-                    vin = Vin(el[0], el[1])
-                else:
-                    continue
-            elif isinstance(el, str):
-                vin = Vin(el)
-            else:
-                continue
-            vehicle_list.append(vin)
-
-        return vehicle_list
-
+        return Vehicle(self.full_or_partial_vin, self.year, results_dict)

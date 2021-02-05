@@ -1,155 +1,205 @@
-from typing import Dict
+from typing import Dict, Union
+import pandas as pd
+import numpy as np
+from pvaw.utils import value_or_none
+from pvaw.results import Results
 
 
+class Vehicle(Results):
+    def __init__(
+        self,
+        full_or_partial_vin: str,
+        year: Union[str, int],
+        results_dict: Dict[str, str],
+    ) -> None:
+        super().__init__(results_dict)
 
-class Vehicle:
-    def __init__(self, vehicle_dict: Dict[str, str]) -> None:
-        self.vehicle_dict = vehicle_dict
-        self.ABS = vehicle_dict['ABS']
-        self.ActiveSafetySysNote = vehicle_dict['ActiveSafetySysNote']
-        self.AdaptiveCruiseControl = vehicle_dict['AdaptiveCruiseControl']
-        self.AdaptiveDrivingBeam = vehicle_dict['AdaptiveDrivingBeam']
-        self.AdaptiveHeadlights = vehicle_dict['AdaptiveHeadlights']
-        self.AdditionalErrorText = vehicle_dict['AdditionalErrorText']
-        self.AirBagLocCurtain = vehicle_dict['AirBagLocCurtain']
-        self.AirBagLocFront = vehicle_dict['AirBagLocFront']
-        self.AirBagLocKnee = vehicle_dict['AirBagLocKnee']
-        self.AirBagLocSeatCushion = vehicle_dict['AirBagLocSeatCushion']
-        self.AirBagLocSide = vehicle_dict['AirBagLocSide']
-        self.AutoReverseSystem = vehicle_dict['AutoReverseSystem']
-        self.AutomaticPedestrianAlertingSound = vehicle_dict['AutomaticPedestrianAlertingSound']
-        self.AxleConfiguration = vehicle_dict['AxleConfiguration']
-        self.Axles = vehicle_dict['Axles']
-        self.BasePrice = vehicle_dict['BasePrice']
-        self.BatteryA = vehicle_dict['BatteryA']
-        self.BatteryA_to = vehicle_dict['BatteryA_to']
-        self.BatteryCells = vehicle_dict['BatteryCells']
-        self.BatteryInfo = vehicle_dict['BatteryInfo']
-        self.BatteryKWh = vehicle_dict['BatteryKWh']
-        self.BatteryKWh_to = vehicle_dict['BatteryKWh_to']
-        self.BatteryModules = vehicle_dict['BatteryModules']
-        self.BatteryPacks = vehicle_dict['BatteryPacks']
-        self.BatteryType = vehicle_dict['BatteryType']
-        self.BatteryV = vehicle_dict['BatteryV']
-        self.BatteryV_to = vehicle_dict['BatteryV_to']
-        self.BedLengthIN = vehicle_dict['BedLengthIN']
-        self.BedType = vehicle_dict['BedType']
-        self.BlindSpotMon = vehicle_dict['BlindSpotMon']
-        self.BodyCabType = vehicle_dict['BodyCabType']
-        self.BodyClass = vehicle_dict['BodyClass']
-        self.BrakeSystemDesc = vehicle_dict['BrakeSystemDesc']
-        self.BrakeSystemType = vehicle_dict['BrakeSystemType']
-        self.BusFloorConfigType = vehicle_dict['BusFloorConfigType']
-        self.BusLength = vehicle_dict['BusLength']
-        self.BusType = vehicle_dict['BusType']
-        self.CAN_AACN = vehicle_dict['CAN_AACN']
-        self.CIB = vehicle_dict['CIB']
-        self.CashForClunkers = vehicle_dict['CashForClunkers']
-        self.ChargerLevel = vehicle_dict['ChargerLevel']
-        self.ChargerPowerKW = vehicle_dict['ChargerPowerKW']
-        self.CoolingType = vehicle_dict['CoolingType']
-        self.CurbWeightLB = vehicle_dict['CurbWeightLB']
-        self.CustomMotorcycleType = vehicle_dict['CustomMotorcycleType']
-        self.DaytimeRunningLight = vehicle_dict['DaytimeRunningLight']
-        self.DestinationMarket = vehicle_dict['DestinationMarket']
-        self.DisplacementCC = vehicle_dict['DisplacementCC']
-        self.DisplacementCI = vehicle_dict['DisplacementCI']
-        self.DisplacementL = vehicle_dict['DisplacementL']
-        self.Doors = vehicle_dict['Doors']
-        self.DriveType = vehicle_dict['DriveType']
-        self.DriverAssist = vehicle_dict['DriverAssist']
-        self.DynamicBrakeSupport = vehicle_dict['DynamicBrakeSupport']
-        self.EDR = vehicle_dict['EDR']
-        self.ESC = vehicle_dict['ESC']
-        self.EVDriveUnit = vehicle_dict['EVDriveUnit']
-        self.ElectrificationLevel = vehicle_dict['ElectrificationLevel']
-        self.EngineConfiguration = vehicle_dict['EngineConfiguration']
-        self.EngineCycles = vehicle_dict['EngineCycles']
-        self.EngineCylinders = vehicle_dict['EngineCylinders']
-        self.EngineHP = vehicle_dict['EngineHP']
-        self.EngineHP_to = vehicle_dict['EngineHP_to']
-        self.EngineKW = vehicle_dict['EngineKW']
-        self.EngineManufacturer = vehicle_dict['EngineManufacturer']
-        self.EngineModel = vehicle_dict['EngineModel']
-        self.EntertainmentSystem = vehicle_dict['EntertainmentSystem']
-        self.ErrorCode = vehicle_dict['ErrorCode']
-        self.ErrorText = vehicle_dict['ErrorText']
-        self.ForwardCollisionWarning = vehicle_dict['ForwardCollisionWarning']
-        self.FuelInjectionType = vehicle_dict['FuelInjectionType']
-        self.FuelTypePrimary = vehicle_dict['FuelTypePrimary']
-        self.FuelTypeSecondary = vehicle_dict['FuelTypeSecondary']
-        self.GCWR = vehicle_dict['GCWR']
-        self.GCWR_to = vehicle_dict['GCWR_to']
-        self.GVWR = vehicle_dict['GVWR']
-        self.GVWR_to = vehicle_dict['GVWR_to']
-        self.KeylessIgnition = vehicle_dict['KeylessIgnition']
-        self.LaneDepartureWarning = vehicle_dict['LaneDepartureWarning']
-        self.LaneKeepSystem = vehicle_dict['LaneKeepSystem']
-        self.LowerBeamHeadlampLightSource = vehicle_dict['LowerBeamHeadlampLightSource']
-        self.Make = vehicle_dict['Make']
-        self.MakeID = vehicle_dict['MakeID']
-        self.Manufacturer = vehicle_dict['Manufacturer']
-        self.ManufacturerId = vehicle_dict['ManufacturerId']
-        self.Model = vehicle_dict['Model']
-        self.ModelID = vehicle_dict['ModelID']
-        self.ModelYear = vehicle_dict['ModelYear']
-        self.MotorcycleChassisType = vehicle_dict['MotorcycleChassisType']
-        self.MotorcycleSuspensionType = vehicle_dict['MotorcycleSuspensionType']
-        self.NCSABodyType = vehicle_dict['NCSABodyType']
-        self.NCSAMake = vehicle_dict['NCSAMake']
-        self.NCSAMapExcApprovedBy = vehicle_dict['NCSAMapExcApprovedBy']
-        self.NCSAMapExcApprovedOn = vehicle_dict['NCSAMapExcApprovedOn']
-        self.NCSAMappingException = vehicle_dict['NCSAMappingException']
-        self.NCSAModel = vehicle_dict['NCSAModel']
-        self.NCSANote = vehicle_dict['NCSANote']
-        self.Note = vehicle_dict['Note']
-        self.OtherBusInfo = vehicle_dict['OtherBusInfo']
-        self.OtherEngineInfo = vehicle_dict['OtherEngineInfo']
-        self.OtherMotorcycleInfo = vehicle_dict['OtherMotorcycleInfo']
-        self.OtherRestraintSystemInfo = vehicle_dict['OtherRestraintSystemInfo']
-        self.OtherTrailerInfo = vehicle_dict['OtherTrailerInfo']
-        self.ParkAssist = vehicle_dict['ParkAssist']
-        self.PedestrianAutomaticEmergencyBraking = vehicle_dict['PedestrianAutomaticEmergencyBraking']
-        self.PlantCity = vehicle_dict['PlantCity']
-        self.PlantCompanyName = vehicle_dict['PlantCompanyName']
-        self.PlantCountry = vehicle_dict['PlantCountry']
-        self.PlantState = vehicle_dict['PlantState']
-        self.PossibleValues = vehicle_dict['PossibleValues']
-        self.Pretensioner = vehicle_dict['Pretensioner']
-        self.RearCrossTrafficAlert = vehicle_dict['RearCrossTrafficAlert']
-        self.RearVisibilitySystem = vehicle_dict['RearVisibilitySystem']
-        self.SAEAutomationLevel = vehicle_dict['SAEAutomationLevel']
-        self.SAEAutomationLevel_to = vehicle_dict['SAEAutomationLevel_to']
-        self.SeatBeltsAll = vehicle_dict['SeatBeltsAll']
-        self.SeatRows = vehicle_dict['SeatRows']
-        self.Seats = vehicle_dict['Seats']
-        self.SemiautomaticHeadlampBeamSwitching = vehicle_dict['SemiautomaticHeadlampBeamSwitching']
-        self.Series = vehicle_dict['Series']
-        self.Series2 = vehicle_dict['Series2']
-        self.SteeringLocation = vehicle_dict['SteeringLocation']
-        self.SuggestedVIN = vehicle_dict['SuggestedVIN']
-        self.TPMS = vehicle_dict['TPMS']
-        self.TopSpeedMPH = vehicle_dict['TopSpeedMPH']
-        self.TrackWidth = vehicle_dict['TrackWidth']
-        self.TractionControl = vehicle_dict['TractionControl']
-        self.TrailerBodyType = vehicle_dict['TrailerBodyType']
-        self.TrailerLength = vehicle_dict['TrailerLength']
-        self.TrailerType = vehicle_dict['TrailerType']
-        self.TransmissionSpeeds = vehicle_dict['TransmissionSpeeds']
-        self.TransmissionStyle = vehicle_dict['TransmissionStyle']
-        self.Trim = vehicle_dict['Trim']
-        self.Trim2 = vehicle_dict['Trim2']
-        self.Turbo = vehicle_dict['Turbo']
-        self.VIN = vehicle_dict['VIN']
-        self.ValveTrainDesign = vehicle_dict['ValveTrainDesign']
-        self.VehicleType = vehicle_dict['VehicleType']
-        self.WheelBaseLong = vehicle_dict['WheelBaseLong']
-        self.WheelBaseShort = vehicle_dict['WheelBaseShort']
-        self.WheelBaseType = vehicle_dict['WheelBaseType']
-        self.WheelSizeFront = vehicle_dict['WheelSizeFront']
-        self.WheelSizeRear = vehicle_dict['WheelSizeRear']
-        self.Wheels = vehicle_dict['Wheels']
-        self.Windows = vehicle_dict['Windows']
-    
-    def get_info_dict(self):
-        return self.vehicle_dict
+        self.full_or_partial_vin = full_or_partial_vin
+        self.year = year
+        self.ABS = value_or_none(results_dict, "ABS")
+        self.ActiveSafetySysNote = value_or_none(results_dict, "ActiveSafetySysNote")
+        self.AdaptiveCruiseControl = value_or_none(
+            results_dict, "AdaptiveCruiseControl"
+        )
+        self.AdaptiveDrivingBeam = value_or_none(results_dict, "AdaptiveDrivingBeam")
+        self.AdaptiveHeadlights = value_or_none(results_dict, "AdaptiveHeadlights")
+        self.AdditionalErrorText = value_or_none(results_dict, "AdditionalErrorText")
+        self.AirBagLocCurtain = value_or_none(results_dict, "AirBagLocCurtain")
+        self.AirBagLocFront = value_or_none(results_dict, "AirBagLocFront")
+        self.AirBagLocKnee = value_or_none(results_dict, "AirBagLocKnee")
+        self.AirBagLocSeatCushion = value_or_none(results_dict, "AirBagLocSeatCushion")
+        self.AirBagLocSide = value_or_none(results_dict, "AirBagLocSide")
+        self.AutoReverseSystem = value_or_none(results_dict, "AutoReverseSystem")
+        self.AutomaticPedestrianAlertingSound = value_or_none(
+            results_dict, "AutomaticPedestrianAlertingSound"
+        )
+        self.AxleConfiguration = value_or_none(results_dict, "AxleConfiguration")
+        self.Axles = value_or_none(results_dict, "Axles")
+        self.BasePrice = value_or_none(results_dict, "BasePrice")
+        self.BatteryA = value_or_none(results_dict, "BatteryA")
+        self.BatteryA_to = value_or_none(results_dict, "BatteryA_to")
+        self.BatteryCells = value_or_none(results_dict, "BatteryCells")
+        self.BatteryInfo = value_or_none(results_dict, "BatteryInfo")
+        self.BatteryKWh = value_or_none(results_dict, "BatteryKWh")
+        self.BatteryKWh_to = value_or_none(results_dict, "BatteryKWh_to")
+        self.BatteryModules = value_or_none(results_dict, "BatteryModules")
+        self.BatteryPacks = value_or_none(results_dict, "BatteryPacks")
+        self.BatteryType = value_or_none(results_dict, "BatteryType")
+        self.BatteryV = value_or_none(results_dict, "BatteryV")
+        self.BatteryV_to = value_or_none(results_dict, "BatteryV_to")
+        self.BedLengthIN = value_or_none(results_dict, "BedLengthIN")
+        self.BedType = value_or_none(results_dict, "BedType")
+        self.BlindSpotMon = value_or_none(results_dict, "BlindSpotMon")
+        self.BodyCabType = value_or_none(results_dict, "BodyCabType")
+        self.BodyClass = value_or_none(results_dict, "BodyClass")
+        self.BrakeSystemDesc = value_or_none(results_dict, "BrakeSystemDesc")
+        self.BrakeSystemType = value_or_none(results_dict, "BrakeSystemType")
+        self.BusFloorConfigType = value_or_none(results_dict, "BusFloorConfigType")
+        self.BusLength = value_or_none(results_dict, "BusLength")
+        self.BusType = value_or_none(results_dict, "BusType")
+        self.CAN_AACN = value_or_none(results_dict, "CAN_AACN")
+        self.CIB = value_or_none(results_dict, "CIB")
+        self.CashForClunkers = value_or_none(results_dict, "CashForClunkers")
+        self.ChargerLevel = value_or_none(results_dict, "ChargerLevel")
+        self.ChargerPowerKW = value_or_none(results_dict, "ChargerPowerKW")
+        self.CoolingType = value_or_none(results_dict, "CoolingType")
+        self.CurbWeightLB = value_or_none(results_dict, "CurbWeightLB")
+        self.CustomMotorcycleType = value_or_none(results_dict, "CustomMotorcycleType")
+        self.DaytimeRunningLight = value_or_none(results_dict, "DaytimeRunningLight")
+        self.DestinationMarket = value_or_none(results_dict, "DestinationMarket")
+        self.DisplacementCC = value_or_none(results_dict, "DisplacementCC")
+        self.DisplacementCI = value_or_none(results_dict, "DisplacementCI")
+        self.DisplacementL = value_or_none(results_dict, "DisplacementL")
+        self.Doors = value_or_none(results_dict, "Doors")
+        self.DriveType = value_or_none(results_dict, "DriveType")
+        self.DriverAssist = value_or_none(results_dict, "DriverAssist")
+        self.DynamicBrakeSupport = value_or_none(results_dict, "DynamicBrakeSupport")
+        self.EDR = value_or_none(results_dict, "EDR")
+        self.ESC = value_or_none(results_dict, "ESC")
+        self.EVDriveUnit = value_or_none(results_dict, "EVDriveUnit")
+        self.ElectrificationLevel = value_or_none(results_dict, "ElectrificationLevel")
+        self.EngineConfiguration = value_or_none(results_dict, "EngineConfiguration")
+        self.EngineCycles = value_or_none(results_dict, "EngineCycles")
+        self.EngineCylinders = value_or_none(results_dict, "EngineCylinders")
+        self.EngineHP = value_or_none(results_dict, "EngineHP")
+        self.EngineHP_to = value_or_none(results_dict, "EngineHP_to")
+        self.EngineKW = value_or_none(results_dict, "EngineKW")
+        self.EngineManufacturer = value_or_none(results_dict, "EngineManufacturer")
+        self.EngineModel = value_or_none(results_dict, "EngineModel")
+        self.EntertainmentSystem = value_or_none(results_dict, "EntertainmentSystem")
+        self.ErrorCode = value_or_none(results_dict, "ErrorCode")
+        self.ErrorText = value_or_none(results_dict, "ErrorText")
+        self.ForwardCollisionWarning = value_or_none(
+            results_dict, "ForwardCollisionWarning"
+        )
+        self.FuelInjectionType = value_or_none(results_dict, "FuelInjectionType")
+        self.FuelTypePrimary = value_or_none(results_dict, "FuelTypePrimary")
+        self.FuelTypeSecondary = value_or_none(results_dict, "FuelTypeSecondary")
+        self.GCWR = value_or_none(results_dict, "GCWR")
+        self.GCWR_to = value_or_none(results_dict, "GCWR_to")
+        self.GVWR = value_or_none(results_dict, "GVWR")
+        self.GVWR_to = value_or_none(results_dict, "GVWR_to")
+        self.KeylessIgnition = value_or_none(results_dict, "KeylessIgnition")
+        self.LaneDepartureWarning = value_or_none(results_dict, "LaneDepartureWarning")
+        self.LaneKeepSystem = value_or_none(results_dict, "LaneKeepSystem")
+        self.LowerBeamHeadlampLightSource = value_or_none(
+            results_dict, "LowerBeamHeadlampLightSource"
+        )
+        self.Make = value_or_none(results_dict, "Make")
+        self.MakeID = value_or_none(results_dict, "MakeID")
+        self.Manufacturer = value_or_none(results_dict, "Manufacturer")
+        self.ManufacturerId = value_or_none(results_dict, "ManufacturerId")
+        self.Model = value_or_none(results_dict, "Model")
+        self.ModelID = value_or_none(results_dict, "ModelID")
+        self.ModelYear = value_or_none(results_dict, "ModelYear")
+        self.MotorcycleChassisType = value_or_none(
+            results_dict, "MotorcycleChassisType"
+        )
+        self.MotorcycleSuspensionType = value_or_none(
+            results_dict, "MotorcycleSuspensionType"
+        )
+        self.NCSABodyType = value_or_none(results_dict, "NCSABodyType")
+        self.NCSAMake = value_or_none(results_dict, "NCSAMake")
+        self.NCSAMapExcApprovedBy = value_or_none(results_dict, "NCSAMapExcApprovedBy")
+        self.NCSAMapExcApprovedOn = value_or_none(results_dict, "NCSAMapExcApprovedOn")
+        self.NCSAMappingException = value_or_none(results_dict, "NCSAMappingException")
+        self.NCSAModel = value_or_none(results_dict, "NCSAModel")
+        self.NCSANote = value_or_none(results_dict, "NCSANote")
+        self.Note = value_or_none(results_dict, "Note")
+        self.OtherBusInfo = value_or_none(results_dict, "OtherBusInfo")
+        self.OtherEngineInfo = value_or_none(results_dict, "OtherEngineInfo")
+        self.OtherMotorcycleInfo = value_or_none(results_dict, "OtherMotorcycleInfo")
+        self.OtherRestraintSystemInfo = value_or_none(
+            results_dict, "OtherRestraintSystemInfo"
+        )
+        self.OtherTrailerInfo = value_or_none(results_dict, "OtherTrailerInfo")
+        self.ParkAssist = value_or_none(results_dict, "ParkAssist")
+        self.PedestrianAutomaticEmergencyBraking = value_or_none(
+            results_dict, "PedestrianAutomaticEmergencyBraking"
+        )
+        self.PlantCity = value_or_none(results_dict, "PlantCity")
+        self.PlantCompanyName = value_or_none(results_dict, "PlantCompanyName")
+        self.PlantCountry = value_or_none(results_dict, "PlantCountry")
+        self.PlantState = value_or_none(results_dict, "PlantState")
+        self.PossibleValues = value_or_none(results_dict, "PossibleValues")
+        self.Pretensioner = value_or_none(results_dict, "Pretensioner")
+        self.RearCrossTrafficAlert = value_or_none(
+            results_dict, "RearCrossTrafficAlert"
+        )
+        self.RearVisibilitySystem = value_or_none(results_dict, "RearVisibilitySystem")
+        self.SAEAutomationLevel = value_or_none(results_dict, "SAEAutomationLevel")
+        self.SAEAutomationLevel_to = value_or_none(
+            results_dict, "SAEAutomationLevel_to"
+        )
+        self.SeatBeltsAll = value_or_none(results_dict, "SeatBeltsAll")
+        self.SeatRows = value_or_none(results_dict, "SeatRows")
+        self.Seats = value_or_none(results_dict, "Seats")
+        self.SemiautomaticHeadlampBeamSwitching = value_or_none(
+            results_dict, "SemiautomaticHeadlampBeamSwitching"
+        )
+        self.Series = value_or_none(results_dict, "Series")
+        self.Series2 = value_or_none(results_dict, "Series2")
+        self.SteeringLocation = value_or_none(results_dict, "SteeringLocation")
+        self.SuggestedVIN = value_or_none(results_dict, "SuggestedVIN")
+        self.TPMS = value_or_none(results_dict, "TPMS")
+        self.TopSpeedMPH = value_or_none(results_dict, "TopSpeedMPH")
+        self.TrackWidth = value_or_none(results_dict, "TrackWidth")
+        self.TractionControl = value_or_none(results_dict, "TractionControl")
+        self.TrailerBodyType = value_or_none(results_dict, "TrailerBodyType")
+        self.TrailerLength = value_or_none(results_dict, "TrailerLength")
+        self.TrailerType = value_or_none(results_dict, "TrailerType")
+        self.TransmissionSpeeds = value_or_none(results_dict, "TransmissionSpeeds")
+        self.TransmissionStyle = value_or_none(results_dict, "TransmissionStyle")
+        self.Trim = value_or_none(results_dict, "Trim")
+        self.Trim2 = value_or_none(results_dict, "Trim2")
+        self.Turbo = value_or_none(results_dict, "Turbo")
+        self.VIN = value_or_none(results_dict, "VIN")
+        self.ValveTrainDesign = value_or_none(results_dict, "ValveTrainDesign")
+        self.VehicleType = value_or_none(results_dict, "VehicleType")
+        self.WheelBaseLong = value_or_none(results_dict, "WheelBaseLong")
+        self.WheelBaseShort = value_or_none(results_dict, "WheelBaseShort")
+        self.WheelBaseType = value_or_none(results_dict, "WheelBaseType")
+        self.WheelSizeFront = value_or_none(results_dict, "WheelSizeFront")
+        self.WheelSizeRear = value_or_none(results_dict, "WheelSizeRear")
+        self.Wheels = value_or_none(results_dict, "Wheels")
+        self.Windows = value_or_none(results_dict, "Windows")
+
+    def search_name(self):
+        search_str = self.full_or_partial_vin
+        if self.year is not None:
+            search_str += f"{self.year}"
+        return search_str
+
+    # def get_dict(self) -> Dict[str, str]:
+    #     return self.results_dict
+
+    # def get_series(self):
+    #     return pd.Series(self.results_dict).replace(
+    #         to_replace=r"^\s*$", value=np.nan, regex=True
+    #     )
+
+    def get_df(self, drop_na: bool = False) -> pd.DataFrame:
+        df = pd.DataFrame({self.full_or_partial_vin: self.get_series()})
+        if drop_na:
+            df.dropna(inplace=True)
+        return df.T

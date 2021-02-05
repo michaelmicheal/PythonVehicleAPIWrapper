@@ -1,54 +1,86 @@
 from . import session
 from typing import Dict, List
-from pvaw.constants import VEHICLE_API
+import pandas as pd
+import numpy as np
+from pvaw.results import Results
+from pvaw.utils import get_path
 
-class WMI:
-    def __init__(self, wmi_dict: Dict[str, str]) -> None:
-        self.wmi_dict = wmi_dict
-        self.wmi = wmi_dict['WMI']
-        self.CreatedOn = wmi_dict['CreatedOn']
-        self.DateAvailableToPublic = wmi_dict['DateAvailableToPublic']
-        self.ManufacturerName = wmi_dict['ManufacturerName']
-        self.UpdatedOn = wmi_dict['UpdatedOn']
-        self.VehicleType = wmi_dict['VehicleType']
+
+class WMI(Results):
+    def __init__(self, results_dict: Dict[str, str]) -> None:
+        super().__init__(results_dict)
+        self.wmi = results_dict["WMI"]
+        self.CreatedOn = results_dict["CreatedOn"]
+        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
+        self.ManufacturerName = results_dict["ManufacturerName"]
+        self.UpdatedOn = results_dict["UpdatedOn"]
+        self.VehicleType = results_dict["VehicleType"]
+
 
 class WMIInfo(WMI):
-    def __init__(self, wmi_dict: Dict[str, str]) -> None:
-        self.wmi_dict = wmi_dict
-        self.wmi = wmi_dict['WMI']
-        self.CreatedOn = wmi_dict['CreatedOn']
-        self.DateAvailableToPublic = wmi_dict['DateAvailableToPublic']
-        self.ManufacturerName = wmi_dict['ManufacturerName']
-        self.UpdatedOn = wmi_dict['UpdatedOn']
-        self.VehicleType = wmi_dict['VehicleType']
-        self.CommonName = wmi_dict['CommonName']
-        self.Make = wmi_dict['Make']
-        self.ParentCompanyName = wmi_dict['ParentCompanyName']
-        self.URL = wmi_dict['URL']
+    def __init__(self, results_dict: Dict[str, str]) -> None:
+        self.results_dict = results_dict
+        self.wmi = results_dict["WMI"]
+        self.CreatedOn = results_dict["CreatedOn"]
+        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
+        self.ManufacturerName = results_dict["ManufacturerName"]
+        self.UpdatedOn = results_dict["UpdatedOn"]
+        self.VehicleType = results_dict["VehicleType"]
+        self.CommonName = results_dict["CommonName"]
+        self.Make = results_dict["Make"]
+        self.ParentCompanyName = results_dict["ParentCompanyName"]
+        self.URL = results_dict["URL"]
+
 
 class WMISearchResult(WMI):
-    def __init__(self, wmi_dict: Dict[str, str]) -> None:
-        self.wmi_dict = wmi_dict
-        self.wmi = wmi_dict['WMI']
-        self.CreatedOn = wmi_dict['CreatedOn']
-        self.DateAvailableToPublic = wmi_dict['DateAvailableToPublic']
-        self.ManufacturerName = wmi_dict['Name']
-        self.UpdatedOn = wmi_dict['UpdatedOn']
-        self.VehicleType = wmi_dict['VehicleType']
-        self.Country = wmi_dict['Country']
+    def __init__(self, results_dict: Dict[str, str]) -> None:
+        self.results_dict = results_dict
+        self.wmi = results_dict["WMI"]
+        self.CreatedOn = results_dict["CreatedOn"]
+        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
+        self.ManufacturerName = results_dict["Name"]
+        self.UpdatedOn = results_dict["UpdatedOn"]
+        self.VehicleType = results_dict["VehicleType"]
+        self.Country = results_dict["Country"]
+
+
+class WMISearchResults:
+    def __init__(self, wsr_list: List[WMISearchResult]):
+        self.wsr_list = wsr_list
+
+    def get_dict(self, drop_na: bool = True):
+        df = pd.DataFrame()
+        for wsr in self.wsr_list:
+            df[wsr.wmi] = wsr.get_series()
+        if drop_na:
+            df.dropna(inplace=True)
+        return df.T
+
 
 def decode_wmi(wmi: str) -> WMI:
-    ## TODO: Error handle the parameters
-    path = f'{VEHICLE_API}DecodeWMI/{wmi}?format=json'
+    if not isinstance(wmi, str):
+        raise TypeError("'wmi' must be a str")
+    if not len(wmi) in (3, 6):
+        raise ValueError(
+            "'wmi' must be length 3 representing VIN position 1-3 "
+            "or length 6 representing VIN positions 1-3 & 12-14."
+        )
+
+    path = get_path("DecodeWMI", wmi)
     response = session.get(path)
-    wmi_dict = response.json()['Results'][0]
-    wmi_dict['WMI'] = wmi
-    return WMIInfo(wmi_dict)
+    results_dict = response.json()["Results"][0]
+    results_dict["WMI"] = wmi
+    return WMIInfo(results_dict)
 
 
-def get_manufacturer_wmis(search: str) -> List[WMI]:
-    path = f'{VEHICLE_API}GetWMIsForManufacturer/{search}?format=json'
+def get_manufacturer_wmis(make_search: str) -> List[WMI]:
+    if not isinstance(make_search, str):
+        raise TypeError("'make_search' must be a str")
+
+    path = get_path("GetWMIsForManufacturer", make_search)
     response = session.get(path)
-    results = response.json()['Results']
-    print(response.json())
-    return [WMISearchResult(result) for result in results]
+    results = response.json()["Results"]
+    return WMISearchResults([WMISearchResult(result) for result in results])
+
+
+## TODO: Add getpath util function

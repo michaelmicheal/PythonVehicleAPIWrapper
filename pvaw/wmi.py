@@ -2,59 +2,20 @@ from . import session
 from typing import Dict, List
 import pandas as pd
 import numpy as np
-from pvaw.results import Results
+from pvaw.results import Results, ResultsList
 from pvaw.utils import get_path
+from pvaw.constants import VEHICLE_API_PATH
 
 
 class WMI(Results):
     def __init__(self, results_dict: Dict[str, str]) -> None:
-        super().__init__(results_dict)
+        super().__init__(results_dict["WMI"], results_dict)
         self.wmi = results_dict["WMI"]
-        self.CreatedOn = results_dict["CreatedOn"]
-        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
-        self.ManufacturerName = results_dict["ManufacturerName"]
-        self.UpdatedOn = results_dict["UpdatedOn"]
-        self.VehicleType = results_dict["VehicleType"]
-
-
-class WMIInfo(WMI):
-    def __init__(self, results_dict: Dict[str, str]) -> None:
-        self.results_dict = results_dict
-        self.wmi = results_dict["WMI"]
-        self.CreatedOn = results_dict["CreatedOn"]
-        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
-        self.ManufacturerName = results_dict["ManufacturerName"]
-        self.UpdatedOn = results_dict["UpdatedOn"]
-        self.VehicleType = results_dict["VehicleType"]
-        self.CommonName = results_dict["CommonName"]
-        self.Make = results_dict["Make"]
-        self.ParentCompanyName = results_dict["ParentCompanyName"]
-        self.URL = results_dict["URL"]
-
-
-class WMISearchResult(WMI):
-    def __init__(self, results_dict: Dict[str, str]) -> None:
-        self.results_dict = results_dict
-        self.wmi = results_dict["WMI"]
-        self.CreatedOn = results_dict["CreatedOn"]
-        self.DateAvailableToPublic = results_dict["DateAvailableToPublic"]
-        self.ManufacturerName = results_dict["Name"]
-        self.UpdatedOn = results_dict["UpdatedOn"]
-        self.VehicleType = results_dict["VehicleType"]
-        self.Country = results_dict["Country"]
-
-
-class WMISearchResults:
-    def __init__(self, wsr_list: List[WMISearchResult]):
-        self.wsr_list = wsr_list
-
-    def get_dict(self, drop_na: bool = True):
-        df = pd.DataFrame()
-        for wsr in self.wsr_list:
-            df[wsr.wmi] = wsr.get_series()
-        if drop_na:
-            df.dropna(inplace=True)
-        return df.T
+        self.vehicle_type = results_dict["VehicleType"]
+        if "ManufacturerName" in results_dict.keys():
+            self.manufacturer_name = results_dict["ManufacturerName"]
+        else:
+            self.manufacturer_name = results_dict["Name"]
 
 
 def decode_wmi(wmi: str) -> WMI:
@@ -66,21 +27,18 @@ def decode_wmi(wmi: str) -> WMI:
             "or length 6 representing VIN positions 1-3 & 12-14."
         )
 
-    path = get_path("DecodeWMI", wmi)
+    path = f"{VEHICLE_API_PATH}DecodeWMI/{wmi}?format=json"
     response = session.get(path)
     results_dict = response.json()["Results"][0]
     results_dict["WMI"] = wmi
-    return WMIInfo(results_dict)
+    return WMI(results_dict)
 
 
 def get_manufacturer_wmis(make_search: str) -> List[WMI]:
     if not isinstance(make_search, str):
         raise TypeError("'make_search' must be a str")
 
-    path = get_path("GetWMIsForManufacturer", make_search)
+    path = f"{VEHICLE_API_PATH}GetWMIsForManufacturer/{make_search}?format=json"
     response = session.get(path)
     results = response.json()["Results"]
-    return WMISearchResults([WMISearchResult(result) for result in results])
-
-
-## TODO: Add getpath util function
+    return ResultsList([WMI(result) for result in results])

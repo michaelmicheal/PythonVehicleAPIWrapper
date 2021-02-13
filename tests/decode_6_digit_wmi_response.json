@@ -1,0 +1,18 @@
+{
+    "Count":1,
+    "Message":"Results returned successfully",
+    "SearchCriteria":"WMI:1G9340",
+    "Results":[
+       {
+          "CommonName":"",
+          "CreatedOn":"2017-05-08",
+          "DateAvailableToPublic":"2017-05-08",
+          "Make":"GRYPHON BIKES & CHOPPERS",
+          "ManufacturerName":"GRYPHON BIKES & CHOPPERS",
+          "ParentCompanyName":"",
+          "URL":"None",
+          "UpdatedOn":"None",
+          "VehicleType":"Motorcycle"
+       }
+    ]
+ }

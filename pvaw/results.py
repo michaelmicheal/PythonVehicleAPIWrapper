@@ -40,6 +40,9 @@ class ResultsList:
         else:
             raise StopIteration
 
+    def __getitem__(self, index):
+        return self.results_list[index]
+
     def get_results(self) -> List[Results]:
         return self.results_list
 

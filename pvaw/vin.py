@@ -2,9 +2,8 @@ from __future__ import annotations
 from typing import Dict, Union, Tuple, List
 import pandas as pd
 import numpy as np
-from pvaw.utils import value_or_none
 from pvaw.results import Results, ResultsList
-from pvaw.utils import get_path, post_path, post_fields
+from pvaw.utils import get_int
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw import session
 
@@ -13,78 +12,88 @@ class BatchVinDecodeError(Exception):
     pass
 
 
-def decode_vin(full_or_partial_vin: str, year: Union[str, int] = None) -> Vehicle:
+class Vin:
+    def __init__(self, full_or_partial_vin: str, model_year: Union[str, int] = None):
+        if not isinstance(full_or_partial_vin, str):
+            raise TypeError('"full_or_partial_vin" must be a str')
 
-    if not isinstance(full_or_partial_vin, str):
-        raise TypeError('"full_or_partial_vin" must be a str')
+        if len(full_or_partial_vin) > 17:
+            raise ValueError('"full_or_partial_vin" must be at most 17 characters')
 
-    if len(full_or_partial_vin) > 17:
-        raise ValueError('"full_or_partial_vin" must be at most 17 characters')
+        self.full_or_partial_vin = full_or_partial_vin
 
-    args = ["format=json"]
+        if model_year is not None:
+            if not isinstance(model_year, (int, str)):
+                raise TypeError('"model_year" must be a str or int')
 
-    if year is not None:
-        if not isinstance(year, (int, str)):
-            raise TypeError('"year" must be a str or int')
+            if int(model_year) < 1953:
+                raise ValueError('"model_year" must be greater than 1953')
 
-        if int(year) < 1953:
-            raise ValueError('"year" must be greater than 1953')
+            self.model_year = model_year
+        else:
+            self.model_year = None
 
-        args.append(f"modelyear={year}")
+    def __str__(self):
+        if self.model_year is not None:
+            return f"{self.full_or_partial_vin},{str(self.model_year)}"
+        else:
+            return self.full_or_partial_vin
 
-    args_str = "&".join(args)
+    def decode(self) -> Vehicle:
 
-    path = f"{VEHICLE_API_PATH}DecodeVinValues/{full_or_partial_vin}?{args_str}"
+        args = ["format=json"]
+        if self.model_year is not None:
+            args.append(f"modelyear={self.model_year}")
 
-    response = session.get(path)
-    results_dict = response.json()["Results"][0]
+        args_str = "&".join(args)
 
-    return Vehicle(
-        (
-            full_or_partial_vin,
-            year,
-        ),
-        results_dict,
-    )
-
-
-def decode_vins(vins: Union[Tuple[Tuple[str, Union[str, int]]]]) -> ResultsList:
-
-    try:
-        vin_batch_str = ";".join(",".join(str(el) for el in vin) for vin in vins)
-    except ...:
-        raise TypeError(
-            "'vins' must be a tuple of vin tuples where each vin is represented as (vin, year)"
+        path = (
+            f"{VEHICLE_API_PATH}DecodeVinValues/{self.full_or_partial_vin}?{args_str}"
         )
 
-    path = post_path("DecodeVINValuesBatch")
+        response = session.get(path)
+        results_dict = response.json()["Results"][0]
+
+        return Vehicle(Vin, results_dict)
+
+
+def decode_vins(vin_list: List[Vin]) -> ResultsList:
+
+    if not isinstance(vin_list, list) or any(not isinstance(v, Vin) for v in vin_list):
+        raise TypeError("'vin_list' must be list of Vin objects")
+
+    if len(vin_list) == 0:
+        raise ValueError("'vin_list' must have at least on Vin")
+
+    vin_batch_str = ";".join(str(vin) for vin in vin_list)
+
+    path = f"{VEHICLE_API_PATH}DecodeVINValuesBatch/"
+
+    post_fields = {"format": "json", "data": vin_batch_str}
 
     try:
-        response = session.post(path, post_fields(vin_batch_str))
+        response = session.post(path, post_fields)
         results_list = response.json()["Results"]
     except ...:
         raise BatchVinDecodeError("Error in API request")
 
-    if len(results_list) != len(vins):
+    if len(results_list) != len(vin_list):
         raise BatchVinDecodeError("Incorrect number of results returned from API")
 
     return ResultsList(
-        [Vehicle(vins[i], results_list[i]) for i in range(len(results_list))]
+        [Vehicle(vin_list[i], results_list[i]) for i in range(len(results_list))]
     )
 
 
 class Vehicle(Results):
     def __init__(
         self,
-        vin_search: Tuple[str, Union[str, int]],
+        vin: Vin,
         results_dict: Dict[str, str],
     ):
-        super().__init__("".join(str(el) for el in vin_search), results_dict)
+        super().__init__(str(vin), results_dict)
 
-        if len(vin_search) == 2:
-            self.model_year = vin_search[1]
-        else:
-            self.model_year = results_dict["ModelYear"]
+        self.model_year = get_int(results_dict["ModelYear"])
         self.make = results_dict["Make"]
         self.manufacturer = results_dict["Manufacturer"]
         self.model = results_dict["Model"]

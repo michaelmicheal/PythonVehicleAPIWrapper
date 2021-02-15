@@ -1,0 +1,1056 @@
+{
+    "Count":96,
+    "Message":"Response returned successfully",
+    "SearchCriteria":"None",
+    "Results":[
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1178,
+          "Mfr_Name":"3T MFG.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"58th Street Customs",
+          "Mfr_ID":1179,
+          "Mfr_Name":"58TH STREET CUSTOMS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"CANADA",
+          "Mfr_CommonName":"9013-7233 Quebec",
+          "Mfr_ID":1180,
+          "Mfr_Name":"9013-7233 QUEBEC INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A&E Trailers",
+          "Mfr_ID":1181,
+          "Mfr_Name":"A & E TRAILERS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A&M Fabrications",
+          "Mfr_ID":1182,
+          "Mfr_Name":"A & M FABRICATIONS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Tow Master",
+          "Mfr_ID":1183,
+          "Mfr_Name":"A-1 CUSTOM TRAILER MFG., INC. ",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A to Z Auto Sales",
+          "Mfr_ID":1184,
+          "Mfr_Name":"A TO Z AUTO SALES",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Magnum Choppers",
+          "Mfr_ID":1185,
+          "Mfr_Name":"A UNIQUE CARS INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A&A Manufacturing",
+          "Mfr_ID":1186,
+          "Mfr_Name":"A & A MANUFACTURING",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A. N. Bowling Manufacturing",
+          "Mfr_ID":1187,
+          "Mfr_Name":"A. N. BOWLING, MFG.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A. Q. Manufacturing",
+          "Mfr_ID":1188,
+          "Mfr_Name":"A.Q. MANUFACTURING CORP.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"ARM INC",
+          "Mfr_ID":1189,
+          "Mfr_Name":"A.R.M.(U.S.A.), INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A1 Cycles",
+          "Mfr_ID":1191,
+          "Mfr_Name":"A1 CYCLES INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"A-BAR-D",
+          "Mfr_ID":1192,
+          "Mfr_Name":"A-BAR-D MFG.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"ABASTECEDORA DE TRACTOPARTES Y REFACCIONES",
+          "Mfr_ID":1193,
+          "Mfr_Name":"ABASTECEDORA DE TRACTOPARTES Y REFACCIONES LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Ability Metals",
+          "Mfr_ID":1194,
+          "Mfr_Name":"ABILITY METALS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Absolute Concepts",
+          "Mfr_ID":1195,
+          "Mfr_Name":"ABSOLUTE CONCEPTS INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"CANADA",
+          "Mfr_CommonName":"Matrixx Specialized Trailers",
+          "Mfr_ID":1196,
+          "Mfr_Name":"2231545 ONTARIO INC. DBA MATRIXX SPECIALIZED TRAILERS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1197,
+          "Mfr_Name":"COUNTRY STONES LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Crane Hills Machine & Fabrication",
+          "Mfr_ID":1198,
+          "Mfr_Name":"Royalty Investments, LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Trailers",
+          "Mfr_ID":1199,
+          "Mfr_Name":"COUNTRY TRAILERS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Craneworks",
+          "Mfr_ID":1201,
+          "Mfr_Name":"CRANEWORKS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Crary Agricultural",
+          "Mfr_ID":1202,
+          "Mfr_Name":"CRARY AGRICULTURAL SOLUTIONS, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Crazy Dago",
+          "Mfr_ID":1203,
+          "Mfr_Name":"CRAZY DAGO CUSTOMS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Crazy Horse Iron",
+          "Mfr_ID":1204,
+          "Mfr_Name":"CRAZY HORSE IRON, LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"CRC Cemetery",
+          "Mfr_ID":1205,
+          "Mfr_Name":"CRC CEMETERY SERVICES INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Create-A-Custom Cycle",
+          "Mfr_ID":1206,
+          "Mfr_Name":"CREATE-A-CUSTOM CYCLE LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1207,
+          "Mfr_Name":"CREATIVE COACHWORKS, INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Creative Sports Supply",
+          "Mfr_ID":1208,
+          "Mfr_Name":"CREATIVE SPORTS SUPPLY LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Creep Cycle",
+          "Mfr_ID":1209,
+          "Mfr_Name":"CREEP CYCLE WORKS INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Country Wagon",
+          "Mfr_ID":1211,
+          "Mfr_Name":"COUNTRY WAGON TRAILERS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Choppers by Otis",
+          "Mfr_ID":1213,
+          "Mfr_Name":"CUSTOM CHOPPERS BY OTIS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Chopperwerks",
+          "Mfr_ID":1214,
+          "Mfr_Name":"CUSTOM CHOPPER WERKS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Components and Structures",
+          "Mfr_ID":1215,
+          "Mfr_Name":"CUSTOM COMPONENTS AND STRUCTURES INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Concessions",
+          "Mfr_ID":1216,
+          "Mfr_Name":"CUSTOM CONCESSIONS TRAILERS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Cut Fabrications",
+          "Mfr_ID":1217,
+          "Mfr_Name":"CUSTOM CUT FABRICATION LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1218,
+          "Mfr_Name":"CUSTOM CYCLE STUDIO LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Motorcycle"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"C.D.M.",
+          "Mfr_ID":1219,
+          "Mfr_Name":"CUSTOM DESIGN MANUFACTURING",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Design",
+          "Mfr_ID":1220,
+          "Mfr_Name":"CUSTOM DESIGN, INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Engineered Products",
+          "Mfr_ID":1221,
+          "Mfr_Name":"CUSTOM ENGINEERED PRODUCTS, LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1222,
+          "Mfr_Name":"CUSTOM EXPANSION FABRICATORS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Fabrication and Equipment",
+          "Mfr_ID":1223,
+          "Mfr_Name":"CUSTOM FABRICATION AND EQUIPMENT",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Farm and Ranch Supply",
+          "Mfr_ID":1224,
+          "Mfr_Name":"CUSTOM FARM AND RANCH SUPPLY",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Fire Apparatus",
+          "Mfr_ID":1225,
+          "Mfr_Name":"CUSTOM FIRE APPARATUS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Marine Components",
+          "Mfr_ID":1226,
+          "Mfr_Name":"CUSTOM MARINE COMPONENTS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Max",
+          "Mfr_ID":1227,
+          "Mfr_Name":"CUSTOM MAX TRAILERS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Mobile Designs",
+          "Mfr_ID":1228,
+          "Mfr_Name":"CUSTOM MOBILE DESIGNS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Pits and Fabrication",
+          "Mfr_ID":1229,
+          "Mfr_Name":"CUSTOM PITS AND FABRICATION LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Custom Services",
+          "Mfr_ID":1230,
+          "Mfr_Name":"CUSTOM SERVICES",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cyclestream",
+          "Mfr_ID":1231,
+          "Mfr_Name":"CYCLESTREAM, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cyclone Environmental",
+          "Mfr_ID":1232,
+          "Mfr_Name":"CYCLONE ENVIRONMENTAL TECHNOLOGIES, LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cyclops Trike",
+          "Mfr_ID":1233,
+          "Mfr_Name":"CYCLOPS TRIKE COMPONENTS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Countryside Welding",
+          "Mfr_ID":1234,
+          "Mfr_Name":"COUNTRYSIDE WELDING",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cynergy Cargo",
+          "Mfr_ID":1235,
+          "Mfr_Name":"CYNERGY CARGO LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"R&D Baker Trailers",
+          "Mfr_ID":1236,
+          "Mfr_Name":"R&D BAKER TRAILERS INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cytec Trailers",
+          "Mfr_ID":1237,
+          "Mfr_Name":"CYTEC TRAILERS",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D and B",
+          "Mfr_ID":1238,
+          "Mfr_Name":"D&B CYCLE PARTS & ACCESSORIES INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1239,
+          "Mfr_Name":"D & D TRAILERS & EQUIPMENT",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D&M Marketing",
+          "Mfr_ID":1240,
+          "Mfr_Name":"D & M MARKETING INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D&M Trailers",
+          "Mfr_ID":1241,
+          "Mfr_Name":"D & M TRAILERS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D&N Trailers",
+          "Mfr_ID":1242,
+          "Mfr_Name":"D & N TRAILERS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D&P Welding",
+          "Mfr_ID":1243,
+          "Mfr_Name":"D & P WELDING",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1244,
+          "Mfr_Name":"MARKET DIRECT CAMPERS/MDC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"D & D Repair and Fabrication",
+          "Mfr_ID":1245,
+          "Mfr_Name":"D & D REPAIR AND FABRICATION",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Count's Kustoms",
+          "Mfr_ID":1246,
+          "Mfr_Name":"COUNT'S KUSTOMS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Copper River Fabricators",
+          "Mfr_ID":1247,
+          "Mfr_Name":"COPPER RIVER FABRICATORS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Country Line",
+          "Mfr_ID":1248,
+          "Mfr_Name":"COUNTY LINE CHOPPERS INC.`",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Copperhead Trailers",
+          "Mfr_ID":1249,
+          "Mfr_Name":"COPPERHEAD TRAILERS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Coras Trailers",
+          "Mfr_ID":1250,
+          "Mfr_Name":"CORAS TRAILER MANUFACTURING, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1252,
+          "Mfr_Name":"CROSS COUNTRY MFG. INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Westside Trailers",
+          "Mfr_ID":1253,
+          "Mfr_Name":"CONVENTURE  LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1254,
+          "Mfr_Name":"CORNELIUS MANUFACTURING, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"American Made",
+          "Mfr_ID":1255,
+          "Mfr_Name":"AMERICAN MADE",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1256,
+          "Mfr_Name":"AMERICAN MANUFACTURING OPERATIONS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cross Energy Solutions",
+          "Mfr_ID":1257,
+          "Mfr_Name":"CROSS ENERGY SOLUTIONS LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"MEXICO",
+          "Mfr_CommonName":"American Manufacturing Support",
+          "Mfr_ID":1258,
+          "Mfr_Name":"AMERICAN MANUFACTURING SUPPORT DE MEXICO S.A. DE C.V.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"American Metal Fabrications",
+          "Mfr_ID":1259,
+          "Mfr_Name":"AMERICAN METAL FABRICATION, INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Cornerstone Manufacturing",
+          "Mfr_ID":1260,
+          "Mfr_Name":"CORNERSTONE MANUFACTURING, LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"American Motorcycle",
+          "Mfr_ID":1261,
+          "Mfr_Name":"AMERICAN MOTORCYCLE CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Motorcycle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1262,
+          "Mfr_Name":"American Motorcycle Specialty Center",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1264,
+          "Mfr_Name":"Corratti Choppers",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1265,
+          "Mfr_Name":"COTNER TRAILERS, INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1267,
+          "Mfr_Name":"Country Pride Trailers",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1268,
+          "Mfr_Name":"D&D TRAILERS LLC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1269,
+          "Mfr_Name":"D.G.C. TRAILER SALES, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1270,
+          "Mfr_Name":"D.K. Hostetler, Inc.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1271,
+          "Mfr_Name":"D.R.T",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1272,
+          "Mfr_Name":"DAIGLE BROTHERS, INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"TRAIL-EZE",
+          "Mfr_ID":1273,
+          "Mfr_Name":"DAKOTA MANUFACTURING CO., INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1274,
+          "Mfr_Name":"Dakota Motorcycle Co.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1275,
+          "Mfr_Name":"Cowboy trailer sales, inc.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1276,
+          "Mfr_Name":"DALLAS SMITH CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"North Jersey Cycle",
+          "Mfr_ID":1278,
+          "Mfr_Name":"North Jersey Cycle",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"None",
+          "Mfr_ID":1279,
+          "Mfr_Name":"Cowboys Kustoms",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Champion Trailer Works",
+          "Mfr_ID":1280,
+          "Mfr_Name":"Champion Trailer Works, Inc",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"CRESCENT MANUFACTURING",
+          "Mfr_ID":1281,
+          "Mfr_Name":"CRESCENT MANUFACTURING, INC.",
+          "VehicleTypes":[
+             
+          ]
+       }
+    ]
+ }

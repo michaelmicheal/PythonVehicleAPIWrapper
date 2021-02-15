@@ -3,7 +3,7 @@ from typing import Dict, Union, Tuple, List
 import pandas as pd
 import numpy as np
 from pvaw.results import Results, ResultsList
-from pvaw.utils import get_int
+from pvaw.utils import get_int, check_model_year
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw import session
 
@@ -23,13 +23,8 @@ class Vin:
         self.full_or_partial_vin = full_or_partial_vin
 
         if model_year is not None:
-            if not isinstance(model_year, (int, str)):
-                raise TypeError('"model_year" must be a str or int')
-
-            if int(model_year) < 1953:
-                raise ValueError('"model_year" must be greater than 1953')
-
-            self.model_year = model_year
+            check_model_year(model_year)
+            self.model_year = int(model_year)
         else:
             self.model_year = None
 

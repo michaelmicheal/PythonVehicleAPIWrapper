@@ -27,11 +27,15 @@ class Manufacturer(Results):
         super().__init__(man_id, results_dict)
         self.common_name = results_dict["Mfr_CommonName"]
         self.name = results_dict["Mfr_Name"]
-        self.vehicle_type = [d["Name"] for d in results_dict["VehicleTypes"]]
-        self.Id = results_dict["Mfr_ID"]
+        self.vehicle_types = [d["Name"] for d in results_dict["VehicleTypes"]]
+        self.id = results_dict["Mfr_ID"]
 
 
-def get_manufacturers(m_type: str = None, page: int = 1) -> Manufacturer:
+def get_manufacturer_types() -> List[str]:
+    return MANUFACTURER_TYPES
+
+
+def get_manufacturers(m_type: str = None, page: int = 1) -> ResultsList:
 
     args = ["format=json"]
     if m_type is not None:

@@ -1,0 +1,1431 @@
+{
+    "Count":100,
+    "Message":"Response returned successfully",
+    "SearchCriteria":null,
+    "Results":[
+       {
+          "Country":"SPAIN",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6577,
+          "Mfr_Name":"UNIDAD DE VEHICULOS INDUSTRIALES, S.A.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Supreme Corp.",
+          "Mfr_ID":1110,
+          "Mfr_Name":"SUPREME CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"KNAPHEIDE Truck",
+          "Mfr_ID":1115,
+          "Mfr_Name":"KNAPHEIDE TRUCK EQUIPMENT COMPANY SOUTHWEST",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1276,
+          "Mfr_Name":"DALLAS SMITH CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1356,
+          "Mfr_Name":"LIMOS BY MOONLIGHT",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1441,
+          "Mfr_Name":"CREST CHEVROLET, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1451,
+          "Mfr_Name":"TOTAL TRUCK & TRAILER",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1460,
+          "Mfr_Name":"LEE TRUCK EQUIPMENT, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1504,
+          "Mfr_Name":"TEAMCO INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1507,
+          "Mfr_Name":"NITE EQUIPMENT INC. (NORTHERN IL. TRACTOR & EQUIP.)",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1511,
+          "Mfr_Name":"FIVE DIAMOND TRAILERS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1513,
+          "Mfr_Name":"WYOMING MACHINERY COMPANY",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1554,
+          "Mfr_Name":"DRAKE EQUIPMENT",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1663,
+          "Mfr_Name":"LANDI RENZO USA",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1665,
+          "Mfr_Name":"RUSH TRUCK CENTERS OF TEXAS, LP",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"dlhBOWLES",
+          "Mfr_ID":1702,
+          "Mfr_Name":"DLHBOWLES, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1915,
+          "Mfr_Name":"GENERAL WELDING AND FABRICATING INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1933,
+          "Mfr_Name":"GERIC-SCURFIELD",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1979,
+          "Mfr_Name":"CARPENTER MANUFACTURING, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":1982,
+          "Mfr_Name":"HAWKEYE TRUCK EQUIPMENT CO., INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Concord",
+          "Mfr_ID":2020,
+          "Mfr_Name":"CONCORD ROAD EQUIPMENT MFG., INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Off Road Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2103,
+          "Mfr_Name":"CASPER WHITE TRUCKS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2332,
+          "Mfr_Name":"KENT KITTERMAN, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2660,
+          "Mfr_Name":"KAFFENBARGER TRUCK EQUIPMENT CO.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2662,
+          "Mfr_Name":"KALIDA TRUCK EQUIPMENT, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2731,
+          "Mfr_Name":"SWAB WAGON COMPANY, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":2887,
+          "Mfr_Name":"MINUTEMAN TRUCKS INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3136,
+          "Mfr_Name":"PALMER TRAILER SALES CO. INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3303,
+          "Mfr_Name":"NORTHWEST BODIES INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3341,
+          "Mfr_Name":"SCHWEIGERS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3359,
+          "Mfr_Name":"NEW ENGLAND TRUCK DESIGN INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3467,
+          "Mfr_Name":"LOOMIS ARMORED INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3480,
+          "Mfr_Name":"NATIONAL CRANE CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3565,
+          "Mfr_Name":"L & S TRUCK CENTER",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3691,
+          "Mfr_Name":"TECOGEN INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3761,
+          "Mfr_Name":"STEELFAB; DIVISION OF P. GARAFANO",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":3972,
+          "Mfr_Name":"QUIGLEY MOTOR COMPANY, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4023,
+          "Mfr_Name":"CALAVAR CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4096,
+          "Mfr_Name":"CLEVELAND AVE. TRAILER SALES",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4102,
+          "Mfr_Name":"CENTRAL WISCONSIN BODY & HOIST, INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4116,
+          "Mfr_Name":"KNAPHEIDE TRUCK EQUIP CENTER JC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4194,
+          "Mfr_Name":"MANITEX, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4283,
+          "Mfr_Name":"ELPERS TRUCK EQUIPMENT",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4356,
+          "Mfr_Name":"MONMOUTH TRUCK EQUIPMENT ACQUISITION LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4368,
+          "Mfr_Name":"THE SHYFT GROUP",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"MGS Inc.",
+          "Mfr_ID":4461,
+          "Mfr_Name":"MGS INCORPORATED",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4470,
+          "Mfr_Name":"AMERICAN EQUIPMENT & TRAILER, INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"NBC TRUCK EQUIPMENT",
+          "Mfr_ID":4504,
+          "Mfr_Name":"NBC TRUICK EQUIPMENT",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4598,
+          "Mfr_Name":"CISCO INC. TRUCK DIVISION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4629,
+          "Mfr_Name":"BUS ANDREWS EQUIP., SALES & SER.INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4638,
+          "Mfr_Name":"C & C TRAILER & BODY CO., INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4663,
+          "Mfr_Name":"A.B.C. INDUSTRIES, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4840,
+          "Mfr_Name":"ALL WHEEL DRIVE EQUIP. MFG., INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":4944,
+          "Mfr_Name":"IDAHO TRUCK SPECIALTIES, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5083,
+          "Mfr_Name":"BRENNER TANK LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5177,
+          "Mfr_Name":"AMERICAN TRUCK & TRAILER BODY CO. INC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5510,
+          "Mfr_Name":"H.A. DEHART & SON, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5564,
+          "Mfr_Name":"HEIL TRAILER INTERNATIONAL, CO",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5570,
+          "Mfr_Name":"HELLER TRUCK BODY CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5573,
+          "Mfr_Name":"HENDERSON MANUFACTURING",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5586,
+          "Mfr_Name":"ASPEN EQUIPMENT COMPANY",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5672,
+          "Mfr_Name":"CUMMINGS WELDING INC",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5684,
+          "Mfr_Name":"CUSTOM CAMP VANS & SERVICE, INC.",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":5858,
+          "Mfr_Name":"COMMERCIAL TRUCK & VAN EQUIPMENT, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6101,
+          "Mfr_Name":"AMERICAN JEREH INTERNATIONAL CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Low Speed Vehicle (LSV)"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6127,
+          "Mfr_Name":"NORTHWEST MACK PARTS & SERVICE COMPANY ",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6192,
+          "Mfr_Name":"HIGH QUALITY CUSTOM DESIGN",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6225,
+          "Mfr_Name":"TRUX LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"General Truck Body",
+          "Mfr_ID":6256,
+          "Mfr_Name":"GENERAL BODY MANUFACTURING COMPANY ",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6268,
+          "Mfr_Name":"SUSQUEHANNA TRUCK SERVICE",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6312,
+          "Mfr_Name":"ZEROTRUCK CORPORATION",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6332,
+          "Mfr_Name":"BATTISTI CUSTOMS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6354,
+          "Mfr_Name":"CLARKE POWER SERVICES INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6366,
+          "Mfr_Name":"CENTRAL CONNECTICUT TANK FABRICATION & TRUCK REPAIR, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6405,
+          "Mfr_Name":"HOLCOMB FREIGHTLINER, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6455,
+          "Mfr_Name":"DENNIS TRUCK & EQUIPMENT CO.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6473,
+          "Mfr_Name":"TRUCK CRANE SOLUTIONS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6504,
+          "Mfr_Name":"COPAN CO LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6509,
+          "Mfr_Name":"NIAGARA FABRICATION, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6510,
+          "Mfr_Name":"CLEAN ENERGY ALTERNATIVES, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6574,
+          "Mfr_Name":"NORTHWEST FLATTANKS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6580,
+          "Mfr_Name":"ADVANTAGE CUSTOMS LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6655,
+          "Mfr_Name":"EMERGENCY EQUIPMENT SPECIALISTS INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Passenger Car"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6665,
+          "Mfr_Name":"TRANSPORT CONCEPTS USA, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6712,
+          "Mfr_Name":"BRISTOL-DONALD CO., INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":"Morgan Olson",
+          "Mfr_ID":6746,
+          "Mfr_Name":"MORGAN OLSON, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6756,
+          "Mfr_Name":"INDIANHEAD TRUCK EQUIPMENT, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6760,
+          "Mfr_Name":"PALFLEET TRUCK EQUIPMENT COMPANY, LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6769,
+          "Mfr_Name":"PALFLEET TRUCK EQUIP, CO., LLC",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6800,
+          "Mfr_Name":"CONDON JOHNSON AND ASSOCIATES",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6829,
+          "Mfr_Name":"NORTHSHORE MANUFACTURING",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Trailer"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6868,
+          "Mfr_Name":"OHIO VAN & TRUCK SUPPLY",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":true,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6878,
+          "Mfr_Name":"ACE TRUCK BODY AND TRAILER REPAIR INC ",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":6985,
+          "Mfr_Name":"MOTIV POWER SYSTEMS, INC.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Incomplete Vehicle"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7010,
+          "Mfr_Name":"GODWIN MANUFACTURING COMPANY INCORPORATED",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7021,
+          "Mfr_Name":"TAGGART MOTOR CO.",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             },
+             {
+                "IsPrimary":false,
+                "Name":"Bus"
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7031,
+          "Mfr_Name":"GENERAL BODY METROPLEX",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7040,
+          "Mfr_Name":"KOENIG BODY AND  EQUIPMENT, INCORPORATED",
+          "VehicleTypes":[
+             
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7041,
+          "Mfr_Name":"GUARDIAN EMERGENCY VEHICLES",
+          "VehicleTypes":[
+             {
+                "IsPrimary":false,
+                "Name":"Truck "
+             }
+          ]
+       },
+       {
+          "Country":"UNITED STATES (USA)",
+          "Mfr_CommonName":null,
+          "Mfr_ID":7043,
+          "Mfr_Name":"DETROIT CUSTOM CHASSIS",
+          "VehicleTypes":[
+             {
+                "IsPrimary":true,
+                "Name":"Truck "
+             }
+          ]
+       }
+    ]
+ }

@@ -1,0 +1,59 @@
+{
+    "Count":1,
+    "Message":"Response returned successfully",
+    "SearchCriteria":null,
+    "Results":[
+       {
+          "Address":"2-1-1 Minami-Aoyama, Minato-ku",
+          "Address2":null,
+          "City":"Tokyo",
+          "ContactEmail":"",
+          "ContactFax":null,
+          "ContactPhone":null,
+          "Country":"JAPAN",
+          "DBAs":null,
+          "EquipmentItems":[
+             
+          ],
+          "LastUpdated":"\/Date(1441217874880-0400)\/",
+          "ManufacturerTypes":[
+             {
+                "Name":"Completed Vehicle Manufacturer"
+             }
+          ],
+          "Mfr_CommonName":"Honda",
+          "Mfr_ID":987,
+          "Mfr_Name":"HONDA MOTOR CO., LTD",
+          "OtherManufacturerDetails":"Truck is another product.",
+          "PostalCode":"107-8556",
+          "PrimaryProduct":null,
+          "PrincipalFirstName":"Koichi Kondo",
+          "PrincipalLastName":null,
+          "PrincipalPosition":"CEO",
+          "StateProvince":"Musashi",
+          "SubmittedName":null,
+          "SubmittedOn":null,
+          "SubmittedPosition":null,
+          "VehicleTypes":[
+             {
+                "GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)",
+                "GVWRTo":"Class 1: 6,000 lb or less (2,722 kg or less)",
+                "IsPrimary":false,
+                "Name":"Motorcycle"
+             },
+             {
+                "GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)",
+                "GVWRTo":"Class 1: 6,000 lb or less (2,722 kg or less)",
+                "IsPrimary":false,
+                "Name":"Passenger Car"
+             },
+             {
+                "GVWRFrom":"Class 1: 6,000 lb or less (2,722 kg or less)",
+                "GVWRTo":"Class 2: 6,001 - 10,000 lb (2,722 - 4,536 kg)",
+                "IsPrimary":false,
+                "Name":"Multipurpose Passenger Vehicle (MPV)"
+             }
+          ]
+       }
+    ]
+ }

@@ -4,47 +4,40 @@ import pandas as pd
 from pvaw import session
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw.results import Results, ResultsList
-
-
-MANUFACTURER_TYPES = frozenset(
-    {
-        "Incomplete Vehicles",
-        "Completed Vehicle Manufacturer",
-        "Incomplete Vehicle Manufacturer",
-        "Intermediate Vehicle Manufacturer",
-        "Final-Stage Vehicle Manufacturer",
-        "Vehicle Alterer",
-        "Fabricating Manufacturer of Motor Vehicle Equipment",
-        "Importer of Motor Vehicle Equipment",
-        "Importer of Motor Vehicles Originally Manufactured to Conform to FMVSS",
-        "Replica Vehicle Manufacturer",
-    }
-)
+from pvaw.utils import check_model_year
 
 
 class Make(Results):
-    def __init__(
-        self, manufacturer_name_or_id: Union[str, int], results_dict: Dict[str, str]
-    ):
-        super().__init__(manufacturer_name_or_id, results_dict)
-        self.manufacturer_name_or_id = manufacturer_name_or_id
-        self.make_id = results_dict["MakeId"]
-        self.make_name = results_dict["MakeName"]
-        self.vehicle_type = results_dict["VehicleTypeName"]
+    def __init__(self, results_dict: Dict[str, str]):
+        print(results_dict.keys())
+        if "Make_ID" in results_dict.keys():
+            self.make_id = results_dict["Make_ID"]
+        else:
+            self.make_id = results_dict["MakeId"]
 
-    def get_df(self, drop_na: bool = False) -> pd.DataFrame:
-        df = pd.DataFrame({self.manufacturer_name_or_id: self.get_series()})
-        if drop_na:
-            df.dropna(inplace=True)
-        return df.T
+        if "Make_Name" in results_dict.keys():
+            self.make_name = results_dict["Make_Name"]
+        else:
+            self.make_name = results_dict["MakeName"]
 
+        if "Mfr_Name" in results_dict.keys():
+            self.manufacturer = results_dict["Mfr_Name"]
+        elif "MfrName" in results_dict.keys():
+            self.manufacturer = results_dict["MfrName"]
+        else:
+            self.manufacturer = None
 
-# TODO: move all attribute names to snake case
+        if "VehicleTypeName" in results_dict.keys():
+            self.vehicle_type = results_dict["VehicleTypeName"]
+        else:
+            self.vehicle_type = None
+
+        super().__init__(self.make_id, results_dict)
 
 
 def get_makes(
     manufacturer_name_or_id: Union[str, int] = None,
-    year: Union[str, int] = None,
+    model_year: Union[str, int] = None,
     vehicle_type: str = None,
 ) -> ResultsList:
 
@@ -53,8 +46,8 @@ def get_makes(
     ):
         raise TypeError("'manufacturer_name_or_id' must be a str or int")
 
-    if year is not None and not isinstance(year, (str, int)):
-        raise TypeError("'year' must be a str or int")
+    if model_year is not None:
+        check_model_year(model_year)
 
     if vehicle_type is not None and not isinstance(vehicle_type, str):
         raise TypeError("'vehicle_type' must be a str")
@@ -63,27 +56,21 @@ def get_makes(
         raise ValueError(
             "Cannot filter by 'vehicle_type' and 'manufacturer_name_or_id'"
         )
-    if vehicle_type is not None and (year is not None):
-        raise ValueError("Cannot filter by 'vehicle_type' and 'year'")
 
-    if manufacturer_name_or_id is None and year is not None:
-        raise ValueError("Cannot search by 'year' without 'manufacturer_name_or_id'")
-
-    ## TODO: add check_year method
+    if manufacturer_name_or_id is None and model_year is not None:
+        raise ValueError(
+            "Cannot search by 'model_year' without 'manufacturer_name_or_id'"
+        )
 
     if manufacturer_name_or_id is not None:
-        if year is not None:
-            path = f"{VEHICLE_API_PATH}GetMakesForManufacturerAndYear/{manufacturer_name_or_id}?year={year}&format=json"
+        if model_year is not None:
+            path = f"{VEHICLE_API_PATH}GetMakesForManufacturerAndYear/{manufacturer_name_or_id}?year={model_year}&format=json"
         else:
-            path = f"{VEHICLE_API_PATH}GetMakesForManufacturer/{manufacturer_name_or_id}?format=json"
+            path = f"{VEHICLE_API_PATH}GetMakeForManufacturer/{manufacturer_name_or_id}?format=json"
     else:
         path = f"{VEHICLE_API_PATH}GetMakesForVehicleType/{vehicle_type}?format=json"
 
     response = session.get(path)
     results_list = response.json()["Results"]
 
-    return ResultsList(
-        [Make(results_dict["MakeId"], results_dict) for results_dict in results_list]
-    )
-
-    # TODO: look into kwargs vs args good style in libraries
+    return ResultsList([Make(results_dict) for results_dict in results_list])

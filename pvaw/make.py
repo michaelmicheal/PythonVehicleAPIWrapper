@@ -9,7 +9,6 @@ from pvaw.utils import check_model_year
 
 class Make(Results):
     def __init__(self, results_dict: Dict[str, str]):
-        print(results_dict.keys())
         if "Make_ID" in results_dict.keys():
             self.make_id = results_dict["Make_ID"]
         else:
@@ -32,7 +31,7 @@ class Make(Results):
         else:
             self.vehicle_type = None
 
-        super().__init__(self.make_id, results_dict)
+        super().__init__(f"{self.make_id}-{self.manufacturer}", results_dict)
 
 
 def get_makes(

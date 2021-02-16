@@ -127,7 +127,6 @@ class TestManufacturer(unittest.TestCase):
 
         manufacturers = get_manufacturer_details(987)
 
-        print(mock_get.mock_calls)
         self.assertTrue(
             mock.call(self.TEST_GET_MANUFACTURER_DETAILS_FROM_ID_URL)
             in mock_get.mock_calls

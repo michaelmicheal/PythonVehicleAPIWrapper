@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Dict, List, Union
 import pandas as pd
-from pvaw import session
+import requests
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw.results import Results, ResultsList
 from pvaw.utils import check_model_year
@@ -69,7 +69,7 @@ def get_makes(
     else:
         path = f"{VEHICLE_API_PATH}GetMakesForVehicleType/{vehicle_type}?format=json"
 
-    response = session.get(path)
+    response = requests.get(path)
     results_list = response.json()["Results"]
 
     return ResultsList([Make(results_dict) for results_dict in results_list])

@@ -27,7 +27,7 @@ class TestVin(unittest.TestCase):
         with self.assertRaises(ValueError):
             Vin("5UXWX7C5*BA", 1941)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_decode_vin(self, mock_get):
         with open("tests/decode_vin_response.json") as f:
             expected_results = json.load(f)
@@ -48,7 +48,7 @@ class TestVin(unittest.TestCase):
         self.assertEqual(vehicle.full_or_partial_vin, "5UXWX7C5*BA")
         self.assertEqual(vehicle.vehicle_type, "MULTIPURPOSE PASSENGER VEHICLE (MPV)")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_decode_vin_model_year(self, mock_get):
         with open("tests/decode_vin_response_with_year.json") as f:
             expected_results = json.load(f)
@@ -79,7 +79,7 @@ class TestVin(unittest.TestCase):
         with self.assertRaises(ValueError):
             decode_vins([])
 
-    @patch.object(Session, "post")
+    @mock.patch("requests.post")
     def test_decode_vins(self, mock_post):
         with open("tests/decode_vin_batch_reponse.json") as f:
             expected_results = json.load(f)

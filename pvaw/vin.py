@@ -5,7 +5,7 @@ import numpy as np
 from pvaw.results import Results, ResultsList
 from pvaw.utils import get_int, check_model_year
 from pvaw.constants import VEHICLE_API_PATH
-from pvaw import session
+import requests
 
 
 class BatchVinDecodeError(Exception):
@@ -46,10 +46,10 @@ class Vin:
             f"{VEHICLE_API_PATH}DecodeVinValues/{self.full_or_partial_vin}?{args_str}"
         )
 
-        response = session.get(path)
+        response = requests.get(path)
         results_dict = response.json()["Results"][0]
 
-        return Vehicle(Vin, results_dict)
+        return Vehicle(self, results_dict)
 
 
 def decode_vins(vin_list: List[Vin]) -> ResultsList:
@@ -67,9 +67,9 @@ def decode_vins(vin_list: List[Vin]) -> ResultsList:
     post_fields = {"format": "json", "data": vin_batch_str}
 
     try:
-        response = session.post(path, post_fields)
+        response = requests.post(path, post_fields)
         results_list = response.json()["Results"]
-    except ...:
+    except Exception:
         raise BatchVinDecodeError("Error in API request")
 
     if len(results_list) != len(vin_list):

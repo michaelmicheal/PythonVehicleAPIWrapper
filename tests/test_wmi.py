@@ -25,7 +25,7 @@ class TestWMI(unittest.TestCase):
         with self.assertRaises(TypeError):
             get_wmis(1)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_decode_wmi_3_digit(self, mock_get):
         with open("tests/decode_3_digit_wmi_response.json") as f:
             expected_results = json.load(f)
@@ -41,7 +41,7 @@ class TestWMI(unittest.TestCase):
         self.assertEqual(wmi_info.manufacturer_name, "FORD MOTOR COMPANY, USA")
         self.assertEqual(wmi_info.vehicle_type, "Incomplete Vehicle")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_decode_wmi_6_digit(self, mock_get):
         with open("tests/decode_6_digit_wmi_response.json") as f:
             expected_results = json.load(f)
@@ -57,7 +57,7 @@ class TestWMI(unittest.TestCase):
         self.assertEqual(wmi_info.manufacturer_name, "GRYPHON BIKES & CHOPPERS")
         self.assertEqual(wmi_info.vehicle_type, "Motorcycle")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_get_wmis(self, mock_get):
         with open("tests/get_wmis_response.json") as f:
             expected_results = json.load(f)
@@ -73,7 +73,7 @@ class TestWMI(unittest.TestCase):
 
         first = wmi_infos[0]
 
-        self.assertEqual(first.get_dict(), expected_results["Results"][0])
+        self.assertEqual(first.get_results(), expected_results["Results"][0])
 
         self.assertEqual(first.wmi, "JHM")
         self.assertEqual(first.manufacturer_name, "HONDA MOTOR CO., LTD")

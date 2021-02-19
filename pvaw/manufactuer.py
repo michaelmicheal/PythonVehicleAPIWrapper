@@ -1,25 +1,9 @@
 from __future__ import annotations
 from typing import Dict, List, Union
 import pandas as pd
-from pvaw import session
+import requests
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw.results import Results, ResultsList
-
-
-MANUFACTURER_TYPES = frozenset(
-    {
-        "Incomplete Vehicles",
-        "Completed Vehicle Manufacturer",
-        "Incomplete Vehicle Manufacturer",
-        "Intermediate Vehicle Manufacturer",
-        "Final-Stage Vehicle Manufacturer",
-        "Vehicle Alterer",
-        "Fabricating Manufacturer of Motor Vehicle Equipment",
-        "Importer of Motor Vehicle Equipment",
-        "Importer of Motor Vehicles Originally Manufactured to Conform to FMVSS",
-        "Replica Vehicle Manufacturer",
-    }
-)
 
 
 class Manufacturer(Results):
@@ -31,28 +15,24 @@ class Manufacturer(Results):
         self.id = results_dict["Mfr_ID"]
 
 
-def get_manufacturer_types() -> List[str]:
-    return MANUFACTURER_TYPES
-
-
 def get_manufacturers(m_type: str = None, page: int = 1) -> ResultsList:
 
     args = ["format=json"]
     if m_type is not None:
-        if m_type not in MANUFACTURER_TYPES:
-            raise ValueError(f"'{m_type}' is not a manufacturer type")
-        args.append("ManufacturerType=Intermediate")
+        if not isinstance(m_type, str):
+            raise TypeError(f"'m_type' must be a str")
+        m_type_str = "%20".join(m_type.split())
+        args.append(f"ManufacturerType={m_type_str}")
 
-    if page is not None:
-        if not isinstance(page, int):
-            raise TypeError("'page' parameter must be an int")
-        args.append(f"page={page}")
+    if not isinstance(page, int):
+        raise TypeError("'page' parameter must be an int")
+    args.append(f"page={page}")
 
     args_str = "&".join(args)
 
     path = f"{VEHICLE_API_PATH}getallmanufacturers?{args_str}"
 
-    response = session.get(path)
+    response = requests.get(path)
     results_list = response.json()["Results"]
 
     return ResultsList(
@@ -70,7 +50,7 @@ def get_manufacturer_details(manufacturer_name_or_id: Union[str, int]) -> Manufa
 
     path = f"{VEHICLE_API_PATH}GetManufacturerDetails/{manufacturer_name_or_id}?format=json"
 
-    response = session.get(path)
+    response = requests.get(path)
     results_list = response.json()["Results"]
 
     return ResultsList(

@@ -15,7 +15,7 @@ class TestManufacturer(unittest.TestCase):
     TEST_GET_MANUFACTURERS_URL = (
         "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=3"
     )
-    TEST_GET_MANUFACTURERS_WITH_M_TYPE_URL = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&ManufacturerType=Intermediate&page=1"
+    TEST_GET_MANUFACTURERS_WITH_M_TYPE_URL = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&ManufacturerType=Completed%20Vehicle%20Manufacturer&page=1"
     TEST_GET_MANUFACTURER_DETAILS_FROM_NAME_URL = "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/honda?format=json"
     TEST_GET_MANUFACTURER_DETAILS_FROM_ID_URL = (
         "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/987?format=json"
@@ -23,11 +23,8 @@ class TestManufacturer(unittest.TestCase):
 
     def test_exceptions(self):
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             get_manufacturers(1)
-
-        with self.assertRaises(ValueError):
-            get_manufacturers("test")
 
         with self.assertRaises(TypeError):
             get_manufacturers(page=1.0)
@@ -35,7 +32,7 @@ class TestManufacturer(unittest.TestCase):
         with self.assertRaises(TypeError):
             get_manufacturer_details(1.0)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_get_manufacturers(self, mock_get):
         with open("tests/get_manufacturers_response.json") as f:
             expected_results = json.load(f)
@@ -63,7 +60,7 @@ class TestManufacturer(unittest.TestCase):
 
         self.assertTrue("Incomplete Vehicle" in first.vehicle_types)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_get_manufacturers_with_m_type(self, mock_get):
         with open("tests/get_manufacturers_with_m_type_response.json") as f:
             expected_results = json.load(f)
@@ -71,6 +68,8 @@ class TestManufacturer(unittest.TestCase):
         mock_get.return_value.json.return_value = expected_results
 
         manufacturers = get_manufacturers(m_type="Completed Vehicle Manufacturer")
+
+        print(mock_get.mock_calls)
 
         self.assertTrue(
             mock.call(self.TEST_GET_MANUFACTURERS_WITH_M_TYPE_URL)
@@ -82,13 +81,13 @@ class TestManufacturer(unittest.TestCase):
 
         first = manufacturers[0]
 
-        self.assertEqual(first.name, "UNIDAD DE VEHICULOS INDUSTRIALES, S.A.")
+        self.assertEqual(first.name, "SIGNALISATION VER-MAC INC.")
 
-        self.assertEqual(first.id, 6577)
+        self.assertEqual(first.id, 1410)
 
-        self.assertTrue("Bus" in first.vehicle_types)
+        self.assertTrue("Trailer" in first.vehicle_types)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_get_manufacturer_details_from_name(self, mock_get):
         with open("tests/get_manufacturer_details_from_name_response.json") as f:
             expected_results = json.load(f)
@@ -118,7 +117,7 @@ class TestManufacturer(unittest.TestCase):
 
         self.assertTrue("Multipurpose Passenger Vehicle (MPV)" in first.vehicle_types)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_get_manufacturer_details_from_id(self, mock_get):
         with open("tests/get_manufacturer_details_from_id_response.json") as f:
             expected_results = json.load(f)

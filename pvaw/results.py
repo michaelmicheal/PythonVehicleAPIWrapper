@@ -9,7 +9,7 @@ class Results:
         self.identifier = identifier
         self.results_dict = results_dict
 
-    def get_dict(self) -> Dict[str, str]:
+    def get_results(self) -> Dict[str, str]:
         return self.results_dict
 
     def get_series(self):
@@ -17,7 +17,7 @@ class Results:
             to_replace=r"^\s*$", value=np.nan, regex=True
         )
 
-    def get_df(self, drop_na: bool = False) -> pd.DataFrame:
+    def get_df(self, drop_na: bool = True) -> pd.DataFrame:
         df = pd.DataFrame({self.identifier: self.get_series()})
         if drop_na:
             df.dropna(inplace=True)
@@ -38,15 +38,16 @@ class ResultsList:
             self.index += 1
             return current
         else:
+            self.index = 0
             raise StopIteration
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int):
         return self.results_list[index]
 
-    def get_results(self) -> List[Results]:
-        return self.results_list
+    def get_results(self) -> List[Dict[str, str]]:
+        return [r.get_results() for r in self.results_list]
 
-    def get_df(self, drop_na: bool = False):
+    def get_df(self, drop_na: bool = True):
         df = pd.DataFrame()
         for manu in self.results_list:
             df[manu.identifier] = manu.get_series()

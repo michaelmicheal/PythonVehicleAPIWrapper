@@ -1,4 +1,4 @@
-from . import session
+import requests
 from typing import Dict, List
 import pandas as pd
 import numpy as np
@@ -27,7 +27,7 @@ def decode_wmi(wmi: str) -> WMIInfo:
         )
 
     path = f"{VEHICLE_API_PATH}DecodeWMI/{wmi}?format=json"
-    response = session.get(path)
+    response = requests.get(path)
     results_dict = response.json()["Results"][0]
     results_dict["WMI"] = wmi
     return WMIInfo(results_dict)
@@ -38,6 +38,6 @@ def get_wmis(make_search: str) -> List[WMIInfo]:
         raise TypeError("'make_search' must be a str")
 
     path = f"{VEHICLE_API_PATH}GetWMIsForManufacturer/{make_search}?format=json"
-    response = session.get(path)
+    response = requests.get(path)
     results = response.json()["Results"]
     return ResultsList([WMIInfo(result) for result in results])

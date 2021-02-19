@@ -31,7 +31,7 @@ class TestMake(unittest.TestCase):
         with self.assertRaises(ValueError):
             get_makes(model_year=1999)
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_make_by_manufacturer_name(self, mock_get):
         with open("tests/get_makes_for_manufacturer_name_response.json") as f:
             expected_results = json.load(f)
@@ -53,7 +53,7 @@ class TestMake(unittest.TestCase):
         self.assertEqual(first.make_name, "HONDA")
         self.assertEqual(first.manufacturer, "HONDA MOTOR CO., LTD")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_make_by_manufacturer_id(self, mock_get):
         with open("tests/get_makes_for_manufacturer_id_response.json") as f:
             expected_results = json.load(f)
@@ -75,7 +75,7 @@ class TestMake(unittest.TestCase):
         self.assertEqual(first.make_name, "HONDA")
         self.assertEqual(first.manufacturer, "HONDA OF AMERICA MFG., INC.")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_make_by_manufacturer_name_and_year(self, mock_get):
         with open("tests/get_makes_for_manufacturer_name_and_year_response.json") as f:
             expected_results = json.load(f)
@@ -98,7 +98,7 @@ class TestMake(unittest.TestCase):
         self.assertEqual(first.make_name, "HONDA")
         self.assertEqual(first.manufacturer, "HONDA MOTOR CO., LTD")
 
-    @patch.object(Session, "get")
+    @mock.patch("requests.get")
     def test_make_by_vehicle_type(self, mock_get):
         with open("tests/get_makes_for_vehicle_type_response.json") as f:
             expected_results = json.load(f)

@@ -3,10 +3,9 @@ from unittest import mock
 from unittest.mock import patch
 import json
 from requests import Session
-from pvaw.manufactuer import (
+from pvaw.manufacturer import (
     Manufacturer,
     get_manufacturer_details,
-    get_manufacturer_types,
     get_manufacturers,
 )
 

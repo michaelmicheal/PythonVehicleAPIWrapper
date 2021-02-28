@@ -27,10 +27,10 @@ class TestWMI(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_decode_wmi_3_digit(self, mock_get):
-        with open("tests/decode_3_digit_wmi_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/decode_3_digit_wmi_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         wmi_info = decode_wmi("1FD")
         self.assertTrue(
@@ -41,12 +41,29 @@ class TestWMI(unittest.TestCase):
         self.assertEqual(wmi_info.manufacturer, "FORD MOTOR COMPANY, USA")
         self.assertEqual(wmi_info.vehicle_type, "Incomplete Vehicle")
 
+        expected_results = expected_response["Results"]
+
+        # testing get_results()
+
+        self.assertEqual(expected_results[0], wmi_info.get_results())
+
+        # Making sure that get_df() doesn't error out
+        wmi_info.get_df()
+
+        wmi_info.get_df(raw=True)
+
+        wmi_info.get_df(raw=True, drop_na=False)
+
+        # Making sure that string and html reps don't error out
+        str(wmi_info)
+        wmi_info._repr_html_()
+
     @mock.patch("requests.get")
     def test_decode_wmi_6_digit(self, mock_get):
-        with open("tests/decode_6_digit_wmi_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/decode_6_digit_wmi_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         wmi_info = decode_wmi("1G9340")
         self.assertTrue(
@@ -59,10 +76,10 @@ class TestWMI(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_get_wmis(self, mock_get):
-        with open("tests/get_wmis_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_wmis_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         wmi_infos = get_wmis("honda")
 
@@ -73,8 +90,28 @@ class TestWMI(unittest.TestCase):
 
         first = wmi_infos[0]
 
-        self.assertEqual(first.get_results(), expected_results["Results"][0])
+        self.assertEqual(first.get_results(), expected_response["Results"][0])
 
         self.assertEqual(first.wmi, "JHM")
         self.assertEqual(first.manufacturer, "HONDA MOTOR CO., LTD")
         self.assertEqual(first.vehicle_type, "Passenger Car")
+
+        expected_results = expected_response["Results"]
+
+        # testing get_results()
+        self.assertEqual(expected_results, wmi_infos.get_results())
+
+        self.assertEqual(expected_results[0], first.get_results())
+
+        # Making sure that get_df() doesn't error out
+        wmi_infos.get_df()
+
+        wmi_infos.get_df(raw=True)
+
+        wmi_infos.get_df(raw=True, drop_na=False)
+
+        # Making sure that string and html reps don't error out
+        str(wmi_infos)
+        wmi_infos._repr_html_()
+        str(first)
+        first._repr_html_()

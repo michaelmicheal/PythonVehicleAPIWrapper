@@ -33,10 +33,10 @@ class TestMake(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_make_by_manufacturer_name(self, mock_get):
-        with open("tests/get_makes_for_manufacturer_name_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_makes_for_manufacturer_name_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         makes = get_makes("honda")
 
@@ -53,12 +53,32 @@ class TestMake(unittest.TestCase):
         self.assertEqual(first.make_name, "HONDA")
         self.assertEqual(first.manufacturer, "HONDA MOTOR CO., LTD")
 
+        expected_results = expected_response["Results"]
+
+        # testing get_results()
+        self.assertEqual(expected_results, makes.get_results())
+
+        self.assertEqual(expected_results[0], first.get_results())
+
+        # Making sure that get_df() doesn't error out
+        makes.get_df()
+
+        makes.get_df(raw=True)
+
+        makes.get_df(raw=True, drop_na=False)
+
+        # Making sure that string and html reps don't error out
+        str(makes)
+        makes._repr_html_()
+        str(first)
+        first._repr_html_()
+
     @mock.patch("requests.get")
     def test_make_by_manufacturer_id(self, mock_get):
-        with open("tests/get_makes_for_manufacturer_id_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_makes_for_manufacturer_id_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         makes = get_makes(988)
 
@@ -77,10 +97,12 @@ class TestMake(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_make_by_manufacturer_name_and_year(self, mock_get):
-        with open("tests/get_makes_for_manufacturer_name_and_year_response.json") as f:
-            expected_results = json.load(f)
+        with open(
+            "tests/responses/get_makes_for_manufacturer_name_and_year_response.json"
+        ) as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         makes = get_makes("honda", 2004)
 
@@ -100,10 +122,10 @@ class TestMake(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_make_by_vehicle_type(self, mock_get):
-        with open("tests/get_makes_for_vehicle_type_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_makes_for_vehicle_type_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         makes = get_makes(vehicle_type="car")
 

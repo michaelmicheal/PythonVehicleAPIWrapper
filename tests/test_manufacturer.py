@@ -33,10 +33,10 @@ class TestManufacturer(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_get_manufacturers(self, mock_get):
-        with open("tests/get_manufacturers_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_manufacturers_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         manufacturers = get_manufacturers(page=3)
 
@@ -59,12 +59,32 @@ class TestManufacturer(unittest.TestCase):
 
         self.assertTrue("Incomplete Vehicle" in first.vehicle_types)
 
+        expected_results = expected_response["Results"]
+
+        # testing get_results()
+        self.assertEqual(expected_results, manufacturers.get_results())
+
+        self.assertEqual(expected_results[0], first.get_results())
+
+        # Making sure that get_df() doesn't error out
+        manufacturers.get_df()
+
+        manufacturers.get_df(raw=True)
+
+        manufacturers.get_df(raw=True, drop_na=False)
+
+        # Making sure that string and html reps don't error out
+        str(manufacturers)
+        manufacturers._repr_html_()
+        str(first)
+        first._repr_html_()
+
     @mock.patch("requests.get")
     def test_get_manufacturers_with_m_type(self, mock_get):
-        with open("tests/get_manufacturers_with_m_type_response.json") as f:
-            expected_results = json.load(f)
+        with open("tests/responses/get_manufacturers_with_m_type_response.json") as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         manufacturers = get_manufacturers(m_type="Completed Vehicle Manufacturer")
 
@@ -88,10 +108,12 @@ class TestManufacturer(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_get_manufacturer_details_from_name(self, mock_get):
-        with open("tests/get_manufacturer_details_from_name_response.json") as f:
-            expected_results = json.load(f)
+        with open(
+            "tests/responses/get_manufacturer_details_from_name_response.json"
+        ) as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         manufacturers = get_manufacturer_details("honda")
 
@@ -118,10 +140,12 @@ class TestManufacturer(unittest.TestCase):
 
     @mock.patch("requests.get")
     def test_get_manufacturer_details_from_id(self, mock_get):
-        with open("tests/get_manufacturer_details_from_id_response.json") as f:
-            expected_results = json.load(f)
+        with open(
+            "tests/responses/get_manufacturer_details_from_id_response.json"
+        ) as f:
+            expected_response = json.load(f)
 
-        mock_get.return_value.json.return_value = expected_results
+        mock_get.return_value.json.return_value = expected_response
 
         manufacturers = get_manufacturer_details(987)
 

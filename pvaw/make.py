@@ -33,6 +33,14 @@ class Make(Results):
 
         super().__init__(f"{self.make_id}-{self.manufacturer}", results_dict)
 
+    def get_attribute_strings(self):
+        return (
+            ("make_id", self.make_id),
+            ("make_name", self.make_name),
+            ("manufacturer", self.manufacturer),
+            ("vehicle_type", self.vehicle_type),
+        )
+
 
 def get_makes(
     manufacturer_name_or_id: Union[str, int] = None,

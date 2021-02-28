@@ -5,6 +5,8 @@ import numpy as np
 
 
 class Results:
+    CLASS_NAME = "Results"
+
     def __init__(self, identifier: str, results_dict: Dict[str, Any]):
         self.identifier = identifier
         self.results_dict = results_dict
@@ -23,8 +25,27 @@ class Results:
             df.dropna(inplace=True)
         return df.T
 
+    def get_attribute_strings(self):
+        return (("identifer", self.identifier),)
+
+    def __str__(self):
+        attribute_str = "\n".join(
+            ": ".join(str(el) for el in att) for att in self.get_attribute_strings()
+        )
+        return f"{self.__class__.__name__}:\n{attribute_str}"
+
+    def _repr_html_(self):
+        rows = "\n".join(
+            "<tr>{0}</tr>".format("".join(f"<td>{el}</td>" for el in att))
+            for att in self.get_attribute_strings()
+        )
+        header = "<tr><th>Attribute</th><th>Value</th></tr>"
+        return f"{self.__class__.__name__}:<table>{header}{rows}</table>"
+
 
 class ResultsList:
+    MAX_LIST = 5
+
     def __init__(self, results_list: List[Results]):
         self.results_list = results_list
         self.index = 0
@@ -41,8 +62,27 @@ class ResultsList:
             self.index = 0
             raise StopIteration
 
+    def __len__(self):
+        return len(self.results_list)
+
     def __getitem__(self, index: int):
         return self.results_list[index]
+
+    def __str__(self):
+        vehicles_str = ",\n ".join(
+            str(results) for results in self.results_list[: self.MAX_LIST]
+        )
+        if len(self) >= self.MAX_LIST:
+            vehicles_str += ",\n..."
+        return f"[{vehicles_str}]"
+
+    def _repr_html_(self):
+        vehicles_html = ",\n ".join(
+            results._repr_html_() for results in self.results_list[: self.MAX_LIST]
+        )
+        if len(self) >= self.MAX_LIST:
+            vehicles_html += ",\n..."
+        return f"[{vehicles_html}]"
 
     def get_results(self) -> List[Dict[str, str]]:
         return [r.get_results() for r in self.results_list]

@@ -12,9 +12,16 @@ class WMIInfo(Results):
         self.wmi = results_dict["WMI"]
         self.vehicle_type = results_dict["VehicleType"]
         if "ManufacturerName" in results_dict.keys():
-            self.manufacturer_name = results_dict["ManufacturerName"]
+            self.manufacturer = results_dict["ManufacturerName"]
         else:
-            self.manufacturer_name = results_dict["Name"]
+            self.manufacturer = results_dict["Name"]
+
+    def get_attribute_strings(self):
+        return (
+            ("wmi", self.wmi),
+            ("manufacturer", self.manufacturer),
+            ("vehicle_type", self.vehicle_type),
+        )
 
 
 def decode_wmi(wmi: str) -> WMIInfo:
@@ -33,11 +40,11 @@ def decode_wmi(wmi: str) -> WMIInfo:
     return WMIInfo(results_dict)
 
 
-def get_wmis(make_search: str) -> List[WMIInfo]:
-    if not isinstance(make_search, str):
+def get_wmis(manufacturer_search: str) -> List[WMIInfo]:
+    if not isinstance(manufacturer_search, str):
         raise TypeError("'make_search' must be a str")
 
-    path = f"{VEHICLE_API_PATH}GetWMIsForManufacturer/{make_search}?format=json"
+    path = f"{VEHICLE_API_PATH}GetWMIsForManufacturer/{manufacturer_search}?format=json"
     response = requests.get(path)
     results = response.json()["Results"]
     return ResultsList([WMIInfo(result) for result in results])

@@ -38,7 +38,7 @@ class TestWMI(unittest.TestCase):
         )
 
         self.assertEqual(wmi_info.wmi, "1FD")
-        self.assertEqual(wmi_info.manufacturer_name, "FORD MOTOR COMPANY, USA")
+        self.assertEqual(wmi_info.manufacturer, "FORD MOTOR COMPANY, USA")
         self.assertEqual(wmi_info.vehicle_type, "Incomplete Vehicle")
 
     @mock.patch("requests.get")
@@ -54,7 +54,7 @@ class TestWMI(unittest.TestCase):
         )
 
         self.assertEqual(wmi_info.wmi, "1G9340")
-        self.assertEqual(wmi_info.manufacturer_name, "GRYPHON BIKES & CHOPPERS")
+        self.assertEqual(wmi_info.manufacturer, "GRYPHON BIKES & CHOPPERS")
         self.assertEqual(wmi_info.vehicle_type, "Motorcycle")
 
     @mock.patch("requests.get")

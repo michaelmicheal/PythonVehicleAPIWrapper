@@ -16,13 +16,6 @@ class WMIInfo(Results):
         else:
             self.manufacturer = results_dict["Name"]
 
-    def get_attribute_strings(self):
-        return (
-            ("wmi", self.wmi),
-            ("manufacturer", self.manufacturer),
-            ("vehicle_type", self.vehicle_type),
-        )
-
 
 def decode_wmi(wmi: str) -> WMIInfo:
     if not isinstance(wmi, str):

@@ -14,14 +14,6 @@ class Manufacturer(Results):
         self.vehicle_types = [d["Name"] for d in results_dict["VehicleTypes"]]
         self.id = results_dict["Mfr_ID"]
 
-    def get_attribute_strings(self):
-        return (
-            ("id", self.id),
-            ("common_name", self.common_name),
-            ("name", self.name),
-            ("vehicle_types", self.vehicle_types),
-        )
-
 
 def get_manufacturers(m_type: str = None, page: int = 1) -> ResultsList:
 

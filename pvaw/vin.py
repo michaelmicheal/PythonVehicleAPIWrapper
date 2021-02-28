@@ -94,13 +94,3 @@ class Vehicle(Results):
         self.model = results_dict["Model"]
         self.full_or_partial_vin = results_dict["VIN"]
         self.vehicle_type = results_dict["VehicleType"]
-
-    def get_attribute_strings(self):
-        return (
-            ("full_or_partial_vin", self.full_or_partial_vin),
-            ("model_year", str(self.model_year)),
-            ("manufacturer", self.manufacturer),
-            ("make", self.make),
-            ("model", self.model),
-            ("vehicle_type", self.vehicle_type),
-        )

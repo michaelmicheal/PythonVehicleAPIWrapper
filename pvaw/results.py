@@ -14,33 +14,32 @@ class Results:
     def get_results(self) -> Dict[str, str]:
         return self.results_dict
 
-    def get_series(self):
-        return pd.Series(self.results_dict).replace(
-            to_replace=r"^\s*$", value=np.nan, regex=True
-        )
+    def get_key_attributes(self):
+        d = self.__dict__.copy()
+        d.pop("identifier", None)
+        d.pop("results_dict", None)
+        return d
 
-    def get_df(self, drop_na: bool = True) -> pd.DataFrame:
-        df = pd.DataFrame({self.identifier: self.get_series()})
+    def get_series(self, raw):
+        if raw:
+            d = self.results_dict
+        else:
+            d = self.get_key_attributes()
+        return pd.Series(d).replace(to_replace=r"^\s*$", value=np.nan, regex=True)
+
+    def get_df(self, raw: bool = False, drop_na: bool = True) -> pd.DataFrame:
+        df = pd.DataFrame({self.identifier: self.get_series(raw)})
         if drop_na:
             df.dropna(inplace=True)
         return df.T
 
-    def get_attribute_strings(self):
-        return (("identifer", self.identifier),)
-
     def __str__(self):
-        attribute_str = "\n".join(
-            ": ".join(str(el) for el in att) for att in self.get_attribute_strings()
-        )
+        d = self.get_key_attributes()
+        attribute_str = "\n".join(": ".join(str(el) for el in att) for att in d.items())
         return f"{self.__class__.__name__}:\n{attribute_str}"
 
     def _repr_html_(self):
-        rows = "\n".join(
-            "<tr>{0}</tr>".format("".join(f"<td>{el}</td>" for el in att))
-            for att in self.get_attribute_strings()
-        )
-        header = "<tr><th>Attribute</th><th>Value</th></tr>"
-        return f"{self.__class__.__name__}:<table>{header}{rows}</table>"
+        return self.get_df(raw=False)._repr_html_()
 
 
 class ResultsList:
@@ -77,20 +76,15 @@ class ResultsList:
         return f"[{vehicles_str}]"
 
     def _repr_html_(self):
-        vehicles_html = ",\n ".join(
-            results._repr_html_() for results in self.results_list[: self.MAX_LIST]
-        )
-        if len(self) >= self.MAX_LIST:
-            vehicles_html += ",\n..."
-        return f"[{vehicles_html}]"
+        return self.get_df(raw=False)._repr_html_()
 
     def get_results(self) -> List[Dict[str, str]]:
         return [r.get_results() for r in self.results_list]
 
-    def get_df(self, drop_na: bool = True):
+    def get_df(self, raw: bool = False, drop_na: bool = True):
         df = pd.DataFrame()
-        for manu in self.results_list:
-            df[manu.identifier] = manu.get_series()
+        for rl in self.results_list:
+            df[rl.identifier] = rl.get_series(raw=raw)
         if drop_na:
             df.dropna(inplace=True)
         return df.T

@@ -2,6 +2,10 @@
 
 A Python wrapper for the **National Highway Traffic Saftey Association** (NHTSA) [Vehicle API](https://vpic.nhtsa.dot.gov/api/)
 
+# License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Documentation
 
 ## Importing Python Vehicle API Wrapper

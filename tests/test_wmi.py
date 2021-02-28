@@ -76,5 +76,5 @@ class TestWMI(unittest.TestCase):
         self.assertEqual(first.get_results(), expected_results["Results"][0])
 
         self.assertEqual(first.wmi, "JHM")
-        self.assertEqual(first.manufacturer_name, "HONDA MOTOR CO., LTD")
+        self.assertEqual(first.manufacturer, "HONDA MOTOR CO., LTD")
         self.assertEqual(first.vehicle_type, "Passenger Car")

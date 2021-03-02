@@ -1,5 +1,5 @@
-from typing import Dict, Any, Union
-from pvaw.constants import VEHICLE_API_PATH, EARLIEST_YEAR
+from typing import Union
+from pvaw.constants import EARLIEST_YEAR
 
 
 def get_int(num: Union[int, str]) -> int:

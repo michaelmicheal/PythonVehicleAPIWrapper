@@ -1,7 +1,5 @@
 from __future__ import annotations
-from typing import Dict, Union, Tuple, List
-import pandas as pd
-import numpy as np
+from typing import Dict, Union, List
 from pvaw.results import Results, ResultsList
 from pvaw.utils import get_int, check_model_year
 from pvaw.constants import VEHICLE_API_PATH

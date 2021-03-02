@@ -1,6 +1,5 @@
 from __future__ import annotations
-from typing import Dict, List, Union
-import pandas as pd
+from typing import Dict, Union
 import requests
 from pvaw.constants import VEHICLE_API_PATH
 from pvaw.results import Results, ResultsList

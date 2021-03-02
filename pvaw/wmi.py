@@ -1,7 +1,5 @@
 import requests
 from typing import Dict, List
-import pandas as pd
-import numpy as np
 from pvaw.results import Results, ResultsList
 from pvaw.constants import VEHICLE_API_PATH
 

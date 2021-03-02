@@ -8,7 +8,13 @@ A Python wrapper for the **National Highway Traffic Saftey Association** (NHTSA)
 
 # Documentation
 
-## Importing Python Vehicle API Wrapper
+## Istalling PVAW
+
+```python
+pip install pvaw
+```
+
+## Importing PVAW
 
 ```python
 import pvaw as pv

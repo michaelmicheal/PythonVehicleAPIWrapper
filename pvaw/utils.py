@@ -5,7 +5,7 @@ from pvaw.constants import EARLIEST_YEAR
 def get_int(num: Union[int, str]) -> int:
     try:
         return int(num)
-    except:
+    except Exception:
         return None
 
 

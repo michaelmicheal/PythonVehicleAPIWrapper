@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pvaw",
-    version="0.0.2",
+    version="0.0.3",
     author="Michael Petro",
     author_email="mgpetro99@gmail.com",
     description="Python Wrapper for the NHTSA Vehicle API",
